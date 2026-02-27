@@ -1,0 +1,36 @@
+# General
+.env
+*.env
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# analysis/Data
+analysis/Data/*.csv
+analysis/Data/*.xlsx
+
+# analysis/script
+analysis/script/*.ipynb_checkpoints/
+
+# Frontend
+node_modules/
+frontend/node_modules/
+frontend/.next/
+frontend/dist/
+frontend/.DS_Store
+frontend/.env
+frontend/*.env
+frontend/.opencode/
+frontend/.openhands/
+frontend/.agents/
+frontend/.vscode/
+frontend/*.log
