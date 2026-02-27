@@ -18,18 +18,18 @@ El dataset contiene información sobre yacimientos, minas y prospectos mineros e
 | Columna         | Descripción                                                                 |
 |-----------------|-----------------------------------------------------------------------------|
 | site_name       | Nombre del sitio minero (mina, prospecto, concesión, cantera, etc.)         |
-| latitude        | Latitud geográfica del sitio (decimal)                                       |
-| longitude       | Longitud geográfica del sitio (decimal)                                      |
-| state           | Región o departamento del Perú donde se ubica el sitio                       |
-| com_type        | Tipo de operación (M: metálica, N: no metálica)                              |
-| commod1         | Mineral o grupo de minerales principales presentes                           |
-| dep_type        | Tipo de depósito (puede estar vacío)                                         |
-| prod_size       | Tamaño de la producción (U: desconocido, S: pequeño, M: mediano, Y: grande)  |
-| dev_stat        | Estado de desarrollo (Producer, Past Producer, Occurrence, Prospect, etc.)   |
-| ore             | Mineral principal extraído (puede estar vacío)                               |
-| work_type       | Tipo de trabajo minero (Surface, Underground, ambos o vacío)                 |
-| hrock_type      | Roca hospedante principal (puede estar vacío)                                |
-| arock_type      | Roca asociada o secundaria (puede estar vacío)                               |
+| latitude        | Latitud geográfica del sitio (decimal)                                      |
+| longitude       | Longitud geográfica del sitio (decimal)                                     |
+| state           | Región o departamento del Perú donde se ubica el sitio                      |
+| com_type        | Tipo de operación (M: metálica, N: no metálica)                             |
+| commod1         | Mineral o grupo de minerales principales presentes                          |
+| dep_type        | Tipo de depósito (puede estar vacío)                                        |
+| prod_size       | Tamaño de la producción (U: desconocido, S: pequeño, M: mediano, Y: grande) |
+| dev_stat        | Estado de desarrollo (Producer, Past Producer, Occurrence, Prospect, etc.)  |
+| ore             | Mineral principal extraído (puede estar vacío)                              |
+| work_type       | Tipo de trabajo minero (Surface, Underground, ambos o vacío)                |
+| hrock_type      | Roca hospedante principal (puede estar vacío)                               |
+| arock_type      | Roca asociada o secundaria (puede estar vacío)                              |
 
 ---
 
