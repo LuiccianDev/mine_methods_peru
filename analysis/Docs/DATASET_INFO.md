@@ -39,7 +39,7 @@ El dataset contiene información sobre yacimientos, minas y prospectos mineros e
 |--------------------------|-----------|------------|---------|----------|-------------------------|----------|-----------|---------------|--------|---------------------|------------|------------|
 | Concesion                | -3.6249   | -77.8031   | Amazonas| M        | Gold                    |          | U         | Occurrence    |        |                     |            |            |
 | "Santa Ursula, Mina"     | -9.78129  | -77.64976  | Ancash  | M        | Zinc, Lead, Silver      |          | N         | Occurrence    |        |                     | Andesite   | Tuff,...   |
-| "Rosita De Oro, Mina"   | -9.55797  | -77.05307  | Ancash  | M        | Silver, Lead            |          | M         | Producer      |        | Surface/Underground | Limestone  | Dacite     |
+| "Rosita De Oro, Mina"    | -9.55797  | -77.05307  | Ancash  | M        | Silver, Lead            |          | M         | Producer      |        | Surface/Underground | Limestone  | Dacite     |
 
 ---
 
