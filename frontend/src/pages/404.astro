@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Image from 'astro/components/Image.astro'
+import imagen_hero from '../assets/background_site.png'
+---
+
+<Layout>
+  <section class="relative min-h-[95vh] flex flex-col">
+    <div
+      class="relative z-10 flex-1 flex items-center justify-center w-[80%] mx-auto border-l border-r border-white/20 bg-black"
+    >
+      <div class="w-full relative">
+        <div
+          class="absolute top-1/2 left-1/2 w-full max-w-175 -translate-x-1/2 -translate-y-full px-6 z-20 flex flex-col items-center text-center"
+        >
+          <div
+            class="mb-5 inline-flex items-center rounded-full border border-[#c1d65b]/40 bg-white/5 py-1.5 px-4"
+          >
+            <span class="text-[0.625rem] font-semibold uppercase tracking-[1.5px] text-white/55"
+              >ERROR · PAGE NOT FOUND</span
+            >
+          </div>
+          <h1 class="text-4xl font-bold pb-3 leading-tight">
+            404 — This Territory Is Unmapped
+          </h1>
+          <p class="text-base text-white/70 pb-4 max-w-3xl mx-auto leading-relaxed">
+            The page you are looking for does not exist or has been moved. Return to the main
+            exploration to continue navigating Peru's mining data.
+          </p>
+          <a
+            href="/"
+            class="mt-2 inline-flex items-center gap-2 rounded-full border border-[#c1d65b]/50 bg-[#c1d65b]/10 px-5 py-2 text-sm font-semibold uppercase tracking-widest text-[#c1d65b] transition hover:bg-[#c1d65b]/20"
+          >
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+      <div class="absolute inset-0 flex items-end justify-center pointer-events-none">
+        <Image
+          src={imagen_hero}
+          alt="Mining map of Peru"
+          loading="eager"
+          class="w-full h-auto object-contain"
+        />
+      </div>
+    </div>
+  </section>
+</Layout>
