@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css'
+import Header from '../components/Header.astro'
+import Footer from '../sections/footer.astro'
 ---
 
 <!doctype html>
@@ -14,6 +16,9 @@ import '../styles/global.css'
     <title>Métodos de Minería Perú</title>
   </head>
   <body>
-    <slot />
+    <Header />
+     <slot />
+    <Footer />
   </body>
 </html>
+
