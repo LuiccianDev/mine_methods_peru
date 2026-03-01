@@ -1,63 +1,54 @@
 {
-    "metadata": {
-        "analysis": "Metodo vs Escala productiva",
-        "total_registros": 557,
-        "metodos": [
-            "Underground",
-            "Surface",
-            "Surface/Underground"
-        ],
-        "escalas": [
-            "Grande",
-            "Mediano",
-            "Pequeño",
-            "Sin dato"
-        ]
+  "metadata": {
+    "analysis": "Metodo vs Escala productiva",
+    "total_registros": 557,
+    "metodos": ["Underground", "Surface", "Surface/Underground"],
+    "escalas": ["Grande", "Mediano", "Pequeño", "Sin dato"]
+  },
+  "frecuencia_absoluta": [
+    {
+      "method": "Underground",
+      "Grande": 143,
+      "Mediano": 24,
+      "Pequeño": 167,
+      "Sin dato": 43
     },
-    "frecuencia_absoluta": [
-        {
-            "method": "Underground",
-            "Grande": 143,
-            "Mediano": 24,
-            "Pequeño": 167,
-            "Sin dato": 43
-        },
-        {
-            "method": "Surface",
-            "Grande": 26,
-            "Mediano": 1,
-            "Pequeño": 59,
-            "Sin dato": 30
-        },
-        {
-            "method": "Surface/Underground",
-            "Grande": 24,
-            "Mediano": 3,
-            "Pequeño": 32,
-            "Sin dato": 5
-        }
-    ],
-    "proporcion_porcentual": [
-        {
-            "method": "Underground",
-            "Grande": 37.93,
-            "Mediano": 6.37,
-            "Pequeño": 44.3,
-            "Sin dato": 11.41
-        },
-        {
-            "method": "Surface",
-            "Grande": 22.41,
-            "Mediano": 0.86,
-            "Pequeño": 50.86,
-            "Sin dato": 25.86
-        },
-        {
-            "method": "Surface/Underground",
-            "Grande": 37.5,
-            "Mediano": 4.69,
-            "Pequeño": 50.0,
-            "Sin dato": 7.81
-        }
-    ]
+    {
+      "method": "Surface",
+      "Grande": 26,
+      "Mediano": 1,
+      "Pequeño": 59,
+      "Sin dato": 30
+    },
+    {
+      "method": "Surface/Underground",
+      "Grande": 24,
+      "Mediano": 3,
+      "Pequeño": 32,
+      "Sin dato": 5
+    }
+  ],
+  "proporcion_porcentual": [
+    {
+      "method": "Underground",
+      "Grande": 37.93,
+      "Mediano": 6.37,
+      "Pequeño": 44.3,
+      "Sin dato": 11.41
+    },
+    {
+      "method": "Surface",
+      "Grande": 22.41,
+      "Mediano": 0.86,
+      "Pequeño": 50.86,
+      "Sin dato": 25.86
+    },
+    {
+      "method": "Surface/Underground",
+      "Grande": 37.5,
+      "Mediano": 4.69,
+      "Pequeño": 50.0,
+      "Sin dato": 7.81
+    }
+  ]
 }

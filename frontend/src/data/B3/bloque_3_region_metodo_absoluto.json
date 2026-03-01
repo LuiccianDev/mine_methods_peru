@@ -1,200 +1,200 @@
 [
-    {
-        "region": "Ancash",
-        "total_known_sites": 53,
-        "methods_counts": {
-            "Surface": 7,
-            "Surface/Underground": 8,
-            "Underground": 38
-        },
-        "dominant_method": "Underground",
-        "dominant_count": 38
+  {
+    "region": "Ancash",
+    "total_known_sites": 53,
+    "methods_counts": {
+      "Surface": 7,
+      "Surface/Underground": 8,
+      "Underground": 38
     },
-    {
-        "region": "Apurimac",
-        "total_known_sites": 36,
-        "methods_counts": {
-            "Surface": 12,
-            "Surface/Underground": 2,
-            "Underground": 22
-        },
-        "dominant_method": "Underground",
-        "dominant_count": 22
+    "dominant_method": "Underground",
+    "dominant_count": 38
+  },
+  {
+    "region": "Apurimac",
+    "total_known_sites": 36,
+    "methods_counts": {
+      "Surface": 12,
+      "Surface/Underground": 2,
+      "Underground": 22
     },
-    {
-        "region": "Arequipa",
-        "total_known_sites": 82,
-        "methods_counts": {
-            "Surface": 11,
-            "Surface/Underground": 3,
-            "Underground": 68
-        },
-        "dominant_method": "Underground",
-        "dominant_count": 68
+    "dominant_method": "Underground",
+    "dominant_count": 22
+  },
+  {
+    "region": "Arequipa",
+    "total_known_sites": 82,
+    "methods_counts": {
+      "Surface": 11,
+      "Surface/Underground": 3,
+      "Underground": 68
     },
-    {
-        "region": "Ayacucho",
-        "total_known_sites": 36,
-        "methods_counts": {
-            "Surface": 4,
-            "Surface/Underground": 0,
-            "Underground": 32
-        },
-        "dominant_method": "Underground",
-        "dominant_count": 32
+    "dominant_method": "Underground",
+    "dominant_count": 68
+  },
+  {
+    "region": "Ayacucho",
+    "total_known_sites": 36,
+    "methods_counts": {
+      "Surface": 4,
+      "Surface/Underground": 0,
+      "Underground": 32
     },
-    {
-        "region": "Cajamarca",
-        "total_known_sites": 19,
-        "methods_counts": {
-            "Surface": 6,
-            "Surface/Underground": 1,
-            "Underground": 12
-        },
-        "dominant_method": "Underground",
-        "dominant_count": 12
+    "dominant_method": "Underground",
+    "dominant_count": 32
+  },
+  {
+    "region": "Cajamarca",
+    "total_known_sites": 19,
+    "methods_counts": {
+      "Surface": 6,
+      "Surface/Underground": 1,
+      "Underground": 12
     },
-    {
-        "region": "Cusco",
-        "total_known_sites": 65,
-        "methods_counts": {
-            "Surface": 22,
-            "Surface/Underground": 12,
-            "Underground": 31
-        },
-        "dominant_method": "Underground",
-        "dominant_count": 31
+    "dominant_method": "Underground",
+    "dominant_count": 12
+  },
+  {
+    "region": "Cusco",
+    "total_known_sites": 65,
+    "methods_counts": {
+      "Surface": 22,
+      "Surface/Underground": 12,
+      "Underground": 31
     },
-    {
-        "region": "Huancavelica",
-        "total_known_sites": 18,
-        "methods_counts": {
-            "Surface": 3,
-            "Surface/Underground": 0,
-            "Underground": 15
-        },
-        "dominant_method": "Underground",
-        "dominant_count": 15
+    "dominant_method": "Underground",
+    "dominant_count": 31
+  },
+  {
+    "region": "Huancavelica",
+    "total_known_sites": 18,
+    "methods_counts": {
+      "Surface": 3,
+      "Surface/Underground": 0,
+      "Underground": 15
     },
-    {
-        "region": "Huanuco",
-        "total_known_sites": 19,
-        "methods_counts": {
-            "Surface": 3,
-            "Surface/Underground": 2,
-            "Underground": 14
-        },
-        "dominant_method": "Underground",
-        "dominant_count": 14
+    "dominant_method": "Underground",
+    "dominant_count": 15
+  },
+  {
+    "region": "Huanuco",
+    "total_known_sites": 19,
+    "methods_counts": {
+      "Surface": 3,
+      "Surface/Underground": 2,
+      "Underground": 14
     },
-    {
-        "region": "Ica",
-        "total_known_sites": 38,
-        "methods_counts": {
-            "Surface": 8,
-            "Surface/Underground": 4,
-            "Underground": 26
-        },
-        "dominant_method": "Underground",
-        "dominant_count": 26
+    "dominant_method": "Underground",
+    "dominant_count": 14
+  },
+  {
+    "region": "Ica",
+    "total_known_sites": 38,
+    "methods_counts": {
+      "Surface": 8,
+      "Surface/Underground": 4,
+      "Underground": 26
     },
-    {
-        "region": "Junin",
-        "total_known_sites": 28,
-        "methods_counts": {
-            "Surface": 4,
-            "Surface/Underground": 5,
-            "Underground": 19
-        },
-        "dominant_method": "Underground",
-        "dominant_count": 19
+    "dominant_method": "Underground",
+    "dominant_count": 26
+  },
+  {
+    "region": "Junin",
+    "total_known_sites": 28,
+    "methods_counts": {
+      "Surface": 4,
+      "Surface/Underground": 5,
+      "Underground": 19
     },
-    {
-        "region": "La Libertad",
-        "total_known_sites": 28,
-        "methods_counts": {
-            "Surface": 16,
-            "Surface/Underground": 7,
-            "Underground": 5
-        },
-        "dominant_method": "Surface",
-        "dominant_count": 16
+    "dominant_method": "Underground",
+    "dominant_count": 19
+  },
+  {
+    "region": "La Libertad",
+    "total_known_sites": 28,
+    "methods_counts": {
+      "Surface": 16,
+      "Surface/Underground": 7,
+      "Underground": 5
     },
-    {
-        "region": "Lambayeque",
-        "total_known_sites": 1,
-        "methods_counts": {
-            "Surface": 1,
-            "Surface/Underground": 0,
-            "Underground": 0
-        },
-        "dominant_method": "Surface",
-        "dominant_count": 1
+    "dominant_method": "Surface",
+    "dominant_count": 16
+  },
+  {
+    "region": "Lambayeque",
+    "total_known_sites": 1,
+    "methods_counts": {
+      "Surface": 1,
+      "Surface/Underground": 0,
+      "Underground": 0
     },
-    {
-        "region": "Lima",
-        "total_known_sites": 73,
-        "methods_counts": {
-            "Surface": 28,
-            "Surface/Underground": 4,
-            "Underground": 41
-        },
-        "dominant_method": "Underground",
-        "dominant_count": 41
+    "dominant_method": "Surface",
+    "dominant_count": 1
+  },
+  {
+    "region": "Lima",
+    "total_known_sites": 73,
+    "methods_counts": {
+      "Surface": 28,
+      "Surface/Underground": 4,
+      "Underground": 41
     },
-    {
-        "region": "Moquegua",
-        "total_known_sites": 4,
-        "methods_counts": {
-            "Surface": 2,
-            "Surface/Underground": 2,
-            "Underground": 0
-        },
-        "dominant_method": "Surface",
-        "dominant_count": 2
+    "dominant_method": "Underground",
+    "dominant_count": 41
+  },
+  {
+    "region": "Moquegua",
+    "total_known_sites": 4,
+    "methods_counts": {
+      "Surface": 2,
+      "Surface/Underground": 2,
+      "Underground": 0
     },
-    {
-        "region": "Pasco",
-        "total_known_sites": 36,
-        "methods_counts": {
-            "Surface": 2,
-            "Surface/Underground": 4,
-            "Underground": 30
-        },
-        "dominant_method": "Underground",
-        "dominant_count": 30
+    "dominant_method": "Surface",
+    "dominant_count": 2
+  },
+  {
+    "region": "Pasco",
+    "total_known_sites": 36,
+    "methods_counts": {
+      "Surface": 2,
+      "Surface/Underground": 4,
+      "Underground": 30
     },
-    {
-        "region": "Piura",
-        "total_known_sites": 4,
-        "methods_counts": {
-            "Surface": 3,
-            "Surface/Underground": 0,
-            "Underground": 1
-        },
-        "dominant_method": "Surface",
-        "dominant_count": 3
+    "dominant_method": "Underground",
+    "dominant_count": 30
+  },
+  {
+    "region": "Piura",
+    "total_known_sites": 4,
+    "methods_counts": {
+      "Surface": 3,
+      "Surface/Underground": 0,
+      "Underground": 1
     },
-    {
-        "region": "Puno",
-        "total_known_sites": 110,
-        "methods_counts": {
-            "Surface": 17,
-            "Surface/Underground": 15,
-            "Underground": 78
-        },
-        "dominant_method": "Underground",
-        "dominant_count": 78
+    "dominant_method": "Surface",
+    "dominant_count": 3
+  },
+  {
+    "region": "Puno",
+    "total_known_sites": 110,
+    "methods_counts": {
+      "Surface": 17,
+      "Surface/Underground": 15,
+      "Underground": 78
     },
-    {
-        "region": "Tacna",
-        "total_known_sites": 36,
-        "methods_counts": {
-            "Surface": 8,
-            "Surface/Underground": 5,
-            "Underground": 23
-        },
-        "dominant_method": "Underground",
-        "dominant_count": 23
-    }
+    "dominant_method": "Underground",
+    "dominant_count": 78
+  },
+  {
+    "region": "Tacna",
+    "total_known_sites": 36,
+    "methods_counts": {
+      "Surface": 8,
+      "Surface/Underground": 5,
+      "Underground": 23
+    },
+    "dominant_method": "Underground",
+    "dominant_count": 23
+  }
 ]

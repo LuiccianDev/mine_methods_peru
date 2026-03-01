@@ -157,8 +157,12 @@ export default function B3MapaSitiosMineros({ data }: B3MapaSitiosMineroProps) {
                   {feature.properties.site_name}
                 </div>
                 <div style={{ fontSize: '12px', color: '#555', lineHeight: '1.6' }}>
-                  <div><strong>Region:</strong> {feature.properties.state}</div>
-                  <div><strong>Mineral:</strong> {feature.properties.mineral_principal}</div>
+                  <div>
+                    <strong>Region:</strong> {feature.properties.state}
+                  </div>
+                  <div>
+                    <strong>Mineral:</strong> {feature.properties.mineral_principal}
+                  </div>
                   <div>
                     <strong>Method:</strong>{' '}
                     {METHOD_LABELS[feature.properties.work_type] || feature.properties.work_type}

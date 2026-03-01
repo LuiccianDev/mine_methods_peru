@@ -20,9 +20,9 @@ const totalKnown = knownMethods.reduce((sum, d) => sum + d.frequency, 0)
       <span class="b1-badge">BLOCK 01 · EXTRACTION</span>
       <h2 class="b1-title">Mining Extraction Methods</h2>
       <p class="b1-subtitle">
-        What do we actually know about how mining is done in Peru? Most mining sites
-        lack information about their extraction method. Here we explore both the information
-        gap and the distribution of identified methods.
+        What do we actually know about how mining is done in Peru? Most mining sites lack
+        information about their extraction method. Here we explore both the information gap and the
+        distribution of identified methods.
       </p>
     </div>
 
@@ -62,14 +62,12 @@ const totalKnown = knownMethods.reduce((sum, d) => sum + d.frequency, 0)
           <div class="b1-card__number">{knownCount}</div>
           <div class="b1-card__label">With identified method</div>
           <div class="b1-card__bar">
-            <div
-              class="b1-card__bar-fill b1-card__bar-fill--known"
-              style={`width: ${knownPct}%`}
-            >
+            <div class="b1-card__bar-fill b1-card__bar-fill--known" style={`width: ${knownPct}%`}>
             </div>
           </div>
           <div class="b1-card__desc">
-            Only a small fraction has data on whether the operation is underground, open-pit, or mixed.
+            Only a small fraction has data on whether the operation is underground, open-pit, or
+            mixed.
           </div>
         </div>
       </div>
@@ -85,11 +83,11 @@ const totalKnown = knownMethods.reduce((sum, d) => sum + d.frequency, 0)
       <span class="b1-insight__icon">⚠</span>
       <p class="b1-insight__text">
         Of the <strong>{totalRegistros}</strong> registered sites,
-        <strong>{unknownPct}%</strong> have no classified extraction method — a gap that
-        conditions the entire analysis. Of the
+        <strong>{unknownPct}%</strong> have no classified extraction method — a gap that conditions the
+        entire analysis. Of the
         <strong>{totalKnown.toLocaleString('es-PE')}</strong> sites with available information, underground
-        mining leads by a wide margin. The conclusions about geographic distribution,
-        mineral-method relationship, and operational scale are based solely on that
+        mining leads by a wide margin. The conclusions about geographic distribution, mineral-method relationship,
+        and operational scale are based solely on that
         <strong>{knownPct}%</strong> of records with complete data.
       </p>
     </div>
