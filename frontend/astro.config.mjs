@@ -2,9 +2,26 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [
+      tailwindcss(),
+      {
+        name: "geojson",
+        transform(code, id) {
+          if (id.endsWith(".geojson")) {
+            return {
+              code: `export default ${code}`,
+              map: null,
+            };
+          }
+        },
+      },
+    ],
   },
+
+  integrations: [react()],
 });
