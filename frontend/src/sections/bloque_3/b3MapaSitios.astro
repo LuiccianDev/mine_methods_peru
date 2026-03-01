@@ -1,0 +1,130 @@
+---
+import geojsonData from '../../data/B3/bloque_3_sitios_mineros_muestra.geojson'
+import B3MapaSitiosMineros from '../../components/maps/B3MapaSitiosMineros'
+
+const totalSites = geojsonData.features.length
+const uniqueRegions = [...new Set(geojsonData.features.map((f: any) => f.properties.state))].length
+---
+
+<section class="b3m-section w-[80%] mx-auto border-l border-r border-b border-white/20">
+  <div class="b3m-inner">
+    <!-- Section header -->
+    <div class="b3m-header">
+      <span class="b3m-badge">BLOQUE 03 · MAPA EXPLORATORIO</span>
+      <h2 class="b3m-title">Sitios Mineros del Perú</h2>
+      <p class="b3m-subtitle">
+        Mapa interactivo con una muestra de <strong>{totalSites}</strong> sitios mineros distribuidos
+        en <strong>{uniqueRegions}</strong> regiones. Cada punto está coloreado por su método de extracción
+        — haz clic para ver los detalles del sitio.
+      </p>
+    </div>
+
+    <!-- Map wrapper -->
+    <div class="b3m-map-wrapper">
+      <B3MapaSitiosMineros data={geojsonData} client:only="react" />
+    </div>
+
+    <!-- Contextual insight -->
+    <div class="b3m-insight">
+      <span class="b3m-insight__icon">🗺</span>
+      <p class="b3m-insight__text">
+        Se observa una concentración en la sierra sur (<strong>Puno</strong>,
+        <strong>Cusco</strong>, <strong>Arequipa</strong>) donde predomina la minería subterránea.
+        La costa muestra mayor presencia de extracción superficial, vinculada a canteras y depósitos
+        aluviales. Los sitios con método <strong>desconocido</strong> incluyen plantas de fundición y
+        refinerías que no realizan extracción directa.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .b3m-section {
+    padding: 60px 0 60px;
+    background: var(--bg-primary);
+  }
+
+  .b3m-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Header */
+  .b3m-header {
+    margin-bottom: 40px;
+  }
+
+  .b3m-badge {
+    display: inline-block;
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--accent-lime);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    padding: 4px 14px;
+    border-radius: 999px;
+    background: rgba(193, 214, 91, 0.08);
+    border: 1px solid rgba(193, 214, 91, 0.15);
+  }
+
+  .b3m-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 12px;
+    letter-spacing: -0.5px;
+  }
+
+  .b3m-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    max-width: 680px;
+    margin: 0;
+  }
+
+  .b3m-subtitle strong {
+    color: var(--accent-lime-light);
+  }
+
+  /* Map wrapper */
+  .b3m-map-wrapper {
+    padding: 8px;
+    border-radius: 16px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    margin-bottom: 28px;
+    overflow: hidden;
+  }
+
+  /* Insight */
+  .b3m-insight {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px 24px;
+    border-radius: 12px;
+    background: rgba(193, 214, 91, 0.04);
+    border: 1px solid rgba(193, 214, 91, 0.12);
+  }
+
+  .b3m-insight__icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .b3m-insight__text {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .b3m-insight__text strong {
+    color: var(--accent-lime-light);
+  }
+</style>

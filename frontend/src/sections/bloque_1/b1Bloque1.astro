@@ -1,0 +1,309 @@
+---
+import brechaData from '../../data/B1/bloque_1_brecha_informativa.json'
+import metodosData from '../../data/B1/bloque_1_metodos_extraccion.json'
+import B1DonutMetodos from '../../components/charts/B1DonutMetodos'
+
+const totalRegistros = brechaData.total_registros.toLocaleString('es-PE')
+const unknownCount = brechaData.unknown_count.toLocaleString('es-PE')
+const knownCount = brechaData.known_count.toLocaleString('es-PE')
+const unknownPct = brechaData.unknown_pct
+const knownPct = brechaData.known_pct
+
+const knownMethods = metodosData.filter((d) => d.method !== 'Unknown')
+const totalKnown = knownMethods.reduce((sum, d) => sum + d.frequency, 0)
+---
+
+<section class="b1-section w-[80%] mx-auto border border-white/20">
+  <div class="b1-inner">
+    <!-- Section header -->
+    <div class="b1-header">
+      <span class="b1-badge">BLOQUE 01 · EXTRACCIÓN</span>
+      <h2 class="b1-title">Métodos de Extracción Minera</h2>
+      <p class="b1-subtitle">
+        ¿Qué sabemos realmente sobre cómo se extrae en el Perú? La mayoría de sitios mineros
+        carecen de información sobre su método de extracción. Aquí exploramos tanto la brecha
+        informativa como la distribución de los métodos identificados.
+      </p>
+    </div>
+
+    <!-- Two-column layout: cards left, chart right -->
+    <div class="b1-content">
+      <!-- Left column: stat cards -->
+      <div class="b1-cards">
+        <!-- Card: Total -->
+        <div class="b1-card b1-card--total">
+          <div class="b1-card__number b1-card__number--hero">{totalRegistros}</div>
+          <div class="b1-card__label">Sitios mineros registrados</div>
+          <div class="b1-card__desc">
+            Total de registros en la base de datos del sector minero peruano analizados en este
+            estudio.
+          </div>
+        </div>
+
+        <!-- Card: Desconocido -->
+        <div class="b1-card b1-card--unknown">
+          <div class="b1-card__pct">{unknownPct}%</div>
+          <div class="b1-card__number">{unknownCount}</div>
+          <div class="b1-card__label">Sin método identificado</div>
+          <div class="b1-card__bar">
+            <div
+              class="b1-card__bar-fill b1-card__bar-fill--unknown"
+              style={`width: ${unknownPct}%`}
+            >
+            </div>
+          </div>
+          <div class="b1-card__desc">
+            Más de tres cuartas partes de los sitios mineros carecen de información sobre su método
+            de extracción.
+          </div>
+        </div>
+
+        <!-- Card: Conocido -->
+        <div class="b1-card b1-card--known">
+          <div class="b1-card__pct">{knownPct}%</div>
+          <div class="b1-card__number">{knownCount}</div>
+          <div class="b1-card__label">Con método identificado</div>
+          <div class="b1-card__bar">
+            <div
+              class="b1-card__bar-fill b1-card__bar-fill--known"
+              style={`width: ${knownPct}%`}
+            >
+            </div>
+          </div>
+          <div class="b1-card__desc">
+            Solo una fracción menor cuenta con datos sobre si la operación es subterránea, a tajo
+            abierto o mixta.
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column: donut chart -->
+      <div class="b1-chart-wrapper">
+        <B1DonutMetodos data={metodosData} client:only="react" />
+      </div>
+    </div>
+
+    <!-- Unified insight -->
+    <div class="b1-insight">
+      <span class="b1-insight__icon">⚠</span>
+      <p class="b1-insight__text">
+        De los <strong>{totalRegistros}</strong> sitios registrados, el
+        <strong>{unknownPct}%</strong> no tiene método de extracción clasificado — una brecha que
+        condiciona todo el análisis. De los
+        <strong>{totalKnown.toLocaleString('es-PE')}</strong> sitios con información disponible, la
+        minería subterránea lidera con amplio margen. Las conclusiones sobre distribución geográfica,
+        relación mineral-método y escala operativa se basan únicamente en ese
+        <strong>{knownPct}%</strong> de registros con datos completos.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .b1-section {
+    padding: 80px 0 60px;
+    background: var(--bg-primary);
+  }
+
+  .b1-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Header */
+  .b1-header {
+    margin-bottom: 40px;
+  }
+
+  .b1-badge {
+    display: inline-block;
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--accent-lime);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    padding: 4px 14px;
+    border-radius: 999px;
+    background: rgba(193, 214, 91, 0.08);
+    border: 1px solid rgba(193, 214, 91, 0.15);
+  }
+
+  .b1-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 12px;
+    letter-spacing: -0.5px;
+  }
+
+  .b1-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    max-width: 680px;
+    margin: 0;
+  }
+
+  /* Two-column content */
+  .b1-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: 768px) {
+    .b1-content {
+      grid-template-columns: 1fr 1.4fr;
+      align-items: stretch;
+    }
+  }
+
+  /* Left column: stat cards stack */
+  .b1-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Cards */
+  .b1-card {
+    position: relative;
+    padding: 22px 20px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    transition: border-color 0.3s ease;
+    overflow: hidden;
+    flex: 1;
+  }
+
+  .b1-card:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .b1-card__pct {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 2px;
+    letter-spacing: -1px;
+  }
+
+  .b1-card__number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
+  }
+
+  .b1-card__number--hero {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -1px;
+  }
+
+  .b1-card__label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+  }
+
+  .b1-card__desc {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* Progress bar */
+  .b1-card__bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+
+  .b1-card__bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.8s ease;
+  }
+
+  /* Card: Unknown */
+  .b1-card--unknown .b1-card__pct {
+    color: var(--accent-brown-light);
+  }
+
+  .b1-card--unknown .b1-card__number {
+    color: var(--accent-brown);
+  }
+
+  .b1-card__bar-fill--unknown {
+    background: linear-gradient(90deg, var(--accent-brown), var(--accent-brown-light));
+  }
+
+  /* Card: Known */
+  .b1-card--known .b1-card__pct {
+    color: var(--accent-lime-light);
+  }
+
+  .b1-card--known .b1-card__number {
+    color: var(--accent-lime);
+  }
+
+  .b1-card__bar-fill--known {
+    background: linear-gradient(90deg, var(--accent-lime), var(--accent-lime-light));
+  }
+
+  /* Right column: chart wrapper */
+  .b1-chart-wrapper {
+    padding: 24px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    min-height: 420px;
+  }
+
+  .b1-chart-wrapper :global(> div) {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Insight */
+  .b1-insight {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px 24px;
+    background: rgba(132, 98, 72, 0.06);
+    border: 1px solid rgba(132, 98, 72, 0.15);
+  }
+
+  .b1-insight__icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .b1-insight__text {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .b1-insight__text strong {
+    color: var(--accent-lime-light);
+  }
+</style>

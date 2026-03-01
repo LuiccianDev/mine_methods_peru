@@ -1,0 +1,132 @@
+---
+import absoluteData from '../../data/B3/bloque_3_region_metodo_absoluto.json'
+import B3RegionMetodoAbsoluto from '../../components/charts/B3RegionMetodoAbsoluto'
+
+const totalSites = absoluteData.reduce((sum: number, d: any) => sum + d.total_known_sites, 0)
+const topRegion = absoluteData.reduce(
+  (max: any, d: any) => (d.total_known_sites > max.total_known_sites ? d : max),
+  absoluteData[0],
+)
+---
+
+<section class="b3a-section w-[80%] mx-auto border-l border-r border-white/20">
+  <div class="b3a-inner">
+    <!-- Section header -->
+    <div class="b3a-header">
+      <span class="b3a-badge">BLOQUE 03 · VOLUMEN REGIONAL</span>
+      <h2 class="b3a-title">Volumen Absoluto por Región</h2>
+      <p class="b3a-subtitle">
+        Conteo real de sitios mineros por método en cada región. Los porcentajes pueden engañar
+        cuando el tamaño de muestra varía drásticamente —
+        <strong>{topRegion.region}</strong> tiene
+        <strong>{topRegion.total_known_sites}</strong> sitios, mientras que otras regiones tienen menos
+        de 5.
+      </p>
+    </div>
+
+    <!-- Absolute bar chart -->
+    <div class="b3a-chart-wrapper">
+      <B3RegionMetodoAbsoluto data={absoluteData} client:only="react" />
+    </div>
+
+    <!-- Contextual insight -->
+    <div class="b3a-insight">
+      <span class="b3a-insight__icon">📊</span>
+      <p class="b3a-insight__text">
+        <strong>Puno</strong> lidera con 110 sitios (78 subterráneos), seguido por
+        <strong>Arequipa</strong> (82 sitios, 68 subterráneos) y <strong>Lima</strong> (73 sitios). Estas
+        tres regiones concentran el <strong>38%</strong> de todos los sitios con método conocido del país.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .b3a-section {
+    padding: 60px 0 60px;
+    background: var(--bg-primary);
+  }
+
+  .b3a-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Header */
+  .b3a-header {
+    margin-bottom: 40px;
+  }
+
+  .b3a-badge {
+    display: inline-block;
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--accent-lime);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    padding: 4px 14px;
+    border-radius: 999px;
+    background: rgba(193, 214, 91, 0.08);
+    border: 1px solid rgba(193, 214, 91, 0.15);
+  }
+
+  .b3a-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 12px;
+    letter-spacing: -0.5px;
+  }
+
+  .b3a-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    max-width: 680px;
+    margin: 0;
+  }
+
+  .b3a-subtitle strong {
+    color: var(--accent-lime-light);
+  }
+
+  /* Chart wrapper */
+  .b3a-chart-wrapper {
+    padding: 24px;
+    border-radius: 16px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    margin-bottom: 28px;
+  }
+
+  /* Insight */
+  .b3a-insight {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px 24px;
+    border-radius: 12px;
+    background: rgba(132, 98, 72, 0.06);
+    border: 1px solid rgba(132, 98, 72, 0.15);
+  }
+
+  .b3a-insight__icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .b3a-insight__text {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .b3a-insight__text strong {
+    color: var(--accent-brown-light);
+  }
+</style>

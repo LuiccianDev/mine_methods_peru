@@ -1,0 +1,120 @@
+---
+import heatmapData from '../../data/B2/bloque_2_heatmap_mineral_metodo.json'
+import B2HeatmapMineralMetodo from '../../components/charts/B2HeatmapMineralMetodo'
+---
+
+<section class="b2h-section w-[80%] mx-auto border-l border-r border-white/20">
+  <div class="b2h-inner">
+    <!-- Section header -->
+    <div class="b2h-header">
+      <span class="b2h-badge">BLOQUE 02 · PANORAMA GENERAL</span>
+      <h2 class="b2h-title">Mineral y Método: Visión Completa</h2>
+      <p class="b2h-subtitle">
+        Mapa de calor que cruza los 10 minerales principales con los 4 estados de método de
+        extracción. La columna "Desconocido" revela cuánta información falta por mineral —
+        condicionando la confiabilidad de todo análisis posterior.
+      </p>
+    </div>
+
+    <!-- Heatmap chart -->
+    <div class="b2h-chart-wrapper">
+      <B2HeatmapMineralMetodo data={heatmapData} client:only="react" />
+    </div>
+
+    <!-- Contextual insight -->
+    <div class="b2h-insight">
+      <span class="b2h-insight__icon">🔍</span>
+      <p class="b2h-insight__text">
+        El <strong>Hierro</strong> (92%) y la <strong>Bentonita</strong> (89%) presentan los mayores niveles
+        de datos desconocidos. En contraste, el <strong>Antimonio</strong> tiene la menor brecha (68%),
+        permitiendo un análisis más confiable de su distribución por método.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .b2h-section {
+    padding: 80px 0 60px;
+    background: var(--bg-primary);
+  }
+
+  .b2h-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Header */
+  .b2h-header {
+    margin-bottom: 40px;
+  }
+
+  .b2h-badge {
+    display: inline-block;
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--accent-lime);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    padding: 4px 14px;
+    border-radius: 999px;
+    background: rgba(193, 214, 91, 0.08);
+    border: 1px solid rgba(193, 214, 91, 0.15);
+  }
+
+  .b2h-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 12px;
+    letter-spacing: -0.5px;
+  }
+
+  .b2h-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    max-width: 680px;
+    margin: 0;
+  }
+
+  /* Chart wrapper */
+  .b2h-chart-wrapper {
+    padding: 24px;
+    border-radius: 16px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    margin-bottom: 28px;
+  }
+
+  /* Insight */
+  .b2h-insight {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px 24px;
+    border-radius: 12px;
+    background: rgba(132, 98, 72, 0.06);
+    border: 1px solid rgba(132, 98, 72, 0.15);
+  }
+
+  .b2h-insight__icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .b2h-insight__text {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .b2h-insight__text strong {
+    color: var(--accent-brown-light);
+  }
+</style>

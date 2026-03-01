@@ -1,0 +1,110 @@
+---
+
+---
+
+<header class="header-wrap border-b border-white/20">
+  <nav class="nav-container">
+    <div class="logo">
+      <span>Luiccian</span>
+    </div>
+    <div class="nav-links">
+      <a href="#methodology" class="nav-link">Metodología</a>
+      <a href="#charts" class="nav-link">Análisis</a>
+      <a href="#map" class="nav-link">Mapa</a>
+      <a href="#synthesis" class="nav-link">Síntesis</a>
+    </div>
+    <div class="nav-actions">
+      <a href="#synthesis" class="btn-outline">Ver hallazgos</a>
+      <a href="#charts" class="btn-solid">Explorar datos</a>
+    </div>
+  </nav>
+</header>
+
+<style>
+  /* ── Header wrapper ────────────────────────────────────── */
+  .header-wrap {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    background: #000000;
+  }
+
+  /* ── Navigation ────────────────────────────────────────── */
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px 200px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 0.875rem;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-links {
+    display: none;
+    gap: 32px;
+  }
+
+  @media (min-width: 768px) {
+    .nav-links {
+      display: flex;
+    }
+  }
+
+  .nav-link {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: #ffffff;
+  }
+
+  .nav-actions {
+    display: flex;
+    gap: 8px;
+  }
+
+  .btn-outline {
+    padding: 6px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-outline:hover {
+    border-color: rgba(255, 255, 255, 0.45);
+    color: #ffffff;
+  }
+
+  .btn-solid {
+    padding: 6px 16px;
+    border-radius: 999px;
+    background: #ffffff;
+    color: #000000;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-solid:hover {
+    background: rgba(255, 255, 255, 0.85);
+  }
+</style>

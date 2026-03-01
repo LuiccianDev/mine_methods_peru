@@ -1,0 +1,376 @@
+---
+
+---
+
+<section class="ctx-section w-[80%] mx-auto  border-white/20 border">
+  <div class="ctx-inner">
+    <!-- Header -->
+    <div class="ctx-header">
+      <span class="ctx-badge">CONTEXTO · ANÁLISIS</span>
+      <h2 class="ctx-title">Sobre los Datos y el Análisis</h2>
+      <p class="ctx-subtitle">
+        El Perú es una de las principales potencias mineras del planeta. Este análisis explora los
+        <strong>3,055 sitios mineros</strong> registrados en el USGS Mineral Resources Data System (MRDS)
+        para responder una pregunta central.
+      </p>
+    </div>
+
+    <!-- Central question -->
+    <div class="ctx-question">
+      <span class="ctx-question__label">Pregunta central</span>
+      <p class="ctx-question__text">
+        ¿Qué método de extracción domina en el Perú según el tipo de mineral y la región, y cómo se
+        relaciona con la escala productiva y el estado de desarrollo?
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .ctx-section {
+    padding: 80px 0 60px;
+    background: var(--bg-primary);
+  }
+
+  .ctx-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ── Header ── */
+  .ctx-header {
+    margin-bottom: 32px;
+  }
+
+  .ctx-badge {
+    display: inline-block;
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--accent-lime);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    padding: 4px 14px;
+    border-radius: 999px;
+    background: rgba(193, 214, 91, 0.08);
+    border: 1px solid rgba(193, 214, 91, 0.15);
+  }
+
+  .ctx-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 12px;
+    letter-spacing: -0.5px;
+  }
+
+  .ctx-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    max-width: 620px;
+    margin: 0;
+  }
+
+  .ctx-subtitle strong {
+    color: var(--accent-lime-light);
+  }
+
+  /* ── Central question ── */
+  .ctx-question {
+    padding: 24px 28px;
+    margin-bottom: 36px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    border-left: 3px solid var(--accent-lime);
+  }
+
+  .ctx-question__label {
+    display: block;
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-lime);
+    margin-bottom: 10px;
+  }
+
+  .ctx-question__text {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* ── Stats bar ── */
+  .ctx-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+    margin-bottom: 36px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+  }
+
+  @media (min-width: 768px) {
+    .ctx-stats {
+      flex-direction: row;
+      align-items: center;
+      gap: 0;
+    }
+  }
+
+  .ctx-stat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
+
+  .ctx-stat__value {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--accent-lime);
+    letter-spacing: -0.5px;
+    line-height: 1;
+  }
+
+  .ctx-stat__label {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  .ctx-stat__divider {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .ctx-stat__divider {
+      display: block;
+      width: 1px;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.08);
+      flex-shrink: 0;
+    }
+  }
+
+  /* ── Ranking cards ── */
+  .ctx-rankings {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+
+  @media (min-width: 640px) {
+    .ctx-rankings {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (min-width: 900px) {
+    .ctx-rankings {
+      grid-template-columns: repeat(7, 1fr);
+    }
+  }
+
+  .ctx-rank-card {
+    padding: 16px 12px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    text-align: center;
+    transition:
+      border-color 0.3s ease,
+      transform 0.2s ease;
+  }
+
+  .ctx-rank-card:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+  }
+
+  .ctx-rank-card__symbol {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent-lime);
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+
+  .ctx-rank-card__name {
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 10px;
+  }
+
+  .ctx-rank-card__row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .ctx-rank-card__world,
+  .ctx-rank-card__latam {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+  }
+
+  .ctx-rank-card__pos {
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .ctx-rank-card__world .ctx-rank-card__pos {
+    color: var(--accent-lime-light);
+  }
+
+  .ctx-rank-card__latam .ctx-rank-card__pos {
+    color: var(--accent-brown-light);
+  }
+
+  .ctx-rank-card__scope {
+    font-size: 0.55rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── Method cards ── */
+  .ctx-methods {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+
+  @media (min-width: 768px) {
+    .ctx-methods {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .ctx-method-card {
+    padding: 20px 18px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    border-top: 3px solid var(--method-color);
+    text-align: center;
+    transition: border-color 0.3s ease;
+  }
+
+  .ctx-method-card:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+    border-top-color: var(--method-color);
+  }
+
+  .ctx-method-card__icon {
+    font-size: 1.4rem;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .ctx-method-card__name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--method-color);
+    margin: 0 0 2px;
+  }
+
+  .ctx-method-card__label {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .ctx-method-card__desc {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ── Analysis axes ── */
+  .ctx-axes {
+    padding: 24px 28px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+  }
+
+  .ctx-axes__label {
+    display: block;
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-lime);
+    margin-bottom: 16px;
+  }
+
+  .ctx-axes__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  @media (min-width: 640px) {
+    .ctx-axes__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 900px) {
+    .ctx-axes__grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  .ctx-axis {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .ctx-axis__num {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--accent-lime);
+    line-height: 1;
+    flex-shrink: 0;
+    opacity: 0.5;
+  }
+
+  .ctx-axis__title {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.2;
+  }
+
+  .ctx-axis__desc {
+    display: block;
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    line-height: 1.3;
+  }
+</style>

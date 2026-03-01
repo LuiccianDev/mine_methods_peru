@@ -1,0 +1,180 @@
+---
+const hallazgos = [
+  {
+    num: '01',
+    title: 'Método dominante',
+    text: 'La minería subterránea (Underground) es el método predominante entre los sitios con método registrado, reflejando la tradición minera andina del Perú centrada en vetas polimetálicas. Sin embargo, existe una brecha informativa significativa que debe considerarse.',
+  },
+  {
+    num: '02',
+    title: 'El mineral condiciona el método',
+    text: 'Existe una relación geológica clara — los minerales de veta (Zn, Pb, Ag, Au) se asocian con Underground, mientras que el Cobre (Cu) se asocia con Surface, consistente con los depósitos porfídicos.',
+  },
+  {
+    num: '03',
+    title: 'Patrones territoriales robustos',
+    text: 'Los Andes centrales (Junín, Pasco, Ancash) son predominantemente subterráneos, mientras que el sur andino (Arequipa, Cusco, Apurímac) presenta mayor diversificación de métodos, incluyendo más operaciones a cielo abierto.',
+  },
+  {
+    num: '04',
+    title: 'La escala productiva influye',
+    text: 'Las operaciones Surface tienden a ser de mayor escala (economías de escala), mientras que Underground se asocia con operaciones pequeñas y medianas (mayor selectividad).',
+  },
+  {
+    num: '05',
+    title: 'La madurez reduce la ambigüedad',
+    text: 'Los Producers tienen método definido; los Occurrences y Prospects tienen mayor proporción de Unknown, lo que refleja su estado de evaluación — no simplemente datos faltantes.',
+  },
+]
+---
+
+<section class="concl-section w-[80%] mx-auto border-l border-r border-white/20 border-t border-b ">
+  <div class="concl-inner">
+    <!-- Header -->
+    <div class="concl-header">
+      <span class="concl-badge">CONCLUSIONES · SÍNTESIS</span>
+      <h2 class="concl-title">Respuesta a la Pregunta Principal</h2>
+      <p class="concl-subtitle">
+        ¿Qué método de extracción domina en el Perú según el tipo de mineral y la región, y cómo se
+        relaciona con la <strong>escala productiva</strong> y el
+        <strong>estado de desarrollo</strong> del proyecto?
+      </p>
+    </div>
+
+    <!-- Hallazgos grid -->
+    <div class="concl-grid">
+      {
+        hallazgos.map((h) => (
+          <div class="concl-card">
+            <span class="concl-card__num">{h.num}</span>
+            <h3 class="concl-card__title">{h.title}</h3>
+            <p class="concl-card__text">{h.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .concl-section {
+    padding: 80px 0 60px;
+    background: var(--bg-primary);
+  }
+
+  .concl-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ── Header ── */
+  .concl-header {
+    margin-bottom: 40px;
+  }
+
+  .concl-badge {
+    display: inline-block;
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--accent-lime);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    padding: 4px 14px;
+    border-radius: 999px;
+    background: rgba(193, 214, 91, 0.08);
+    border: 1px solid rgba(193, 214, 91, 0.15);
+  }
+
+  .concl-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 12px;
+    letter-spacing: -0.5px;
+  }
+
+  .concl-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    max-width: 680px;
+    margin: 0;
+  }
+
+  .concl-subtitle strong {
+    color: var(--accent-lime-light);
+  }
+
+  /* ── Hallazgos grid ── */
+  .concl-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .concl-card {
+    position: relative;
+    padding: 24px 28px 24px 80px;
+    border-radius: 16px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    transition: border-color 0.25s ease;
+  }
+
+  .concl-card:hover {
+    border-color: rgba(193, 214, 91, 0.2);
+  }
+
+  .concl-card__num {
+    position: absolute;
+    left: 24px;
+    top: 24px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--accent-lime);
+    opacity: 0.5;
+    line-height: 1;
+  }
+
+  .concl-card__title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 8px;
+  }
+
+  .concl-card__text {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ── Responsive ── */
+  @media (min-width: 768px) {
+    .concl-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .concl-grid > :first-child {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .concl-title {
+      font-size: 1.5rem;
+    }
+
+    .concl-card {
+      padding: 20px 20px 20px 64px;
+    }
+
+    .concl-card__num {
+      left: 20px;
+    }
+  }
+</style>

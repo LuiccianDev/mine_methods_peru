@@ -1,0 +1,131 @@
+---
+import estadoData from '../../data/B5/bloque_5_estado_desarrollo_vs_metodo.json'
+import B5BarDesarrolloMetodo from '../../components/charts/B5BarDesarrolloMetodo'
+
+const totalRegistros = estadoData.metadata.total_registros
+---
+
+<section class="b5a-section w-[80%] mx-auto border border-white/20">
+  <div class="b5a-inner">
+    <!-- Section header -->
+    <div class="b5a-header">
+      <span class="b5a-badge">BLOQUE 05 · CICLO DE VIDA</span>
+      <h2 class="b5a-title">Distribución Absoluta: Estado de Desarrollo vs Método</h2>
+      <p class="b5a-subtitle">
+        Frecuencia absoluta de <strong>{totalRegistros.toLocaleString('es-PE')}</strong> registros clasificados
+        por estado de desarrollo y método de extracción. Esta vista complementa la distribución porcentual,
+        revelando el peso real de cada categoría en términos de volumen.
+      </p>
+    </div>
+
+    <!-- Chart container -->
+    <div class="b5a-chart-wrapper">
+      <B5BarDesarrolloMetodo data={estadoData} client:only="react" />
+    </div>
+
+    <!-- Contextual insight -->
+    <div class="b5a-insight">
+      <span class="b5a-insight__icon">📊</span>
+      <p class="b5a-insight__text">
+        Los <strong>ex-productores</strong> concentran la mayor cantidad de minas subterráneas (<strong
+          >142</strong
+        >), mientras que las <strong>ocurrencias</strong> dominan el volumen total con <strong
+          >1.258</strong
+        > registros — de los cuales <strong>1.072</strong> son de método desconocido. Los <strong
+          >productores activos</strong
+        > muestran la distribución más equilibrada entre métodos conocidos, con <strong>122</strong> subterráneos,
+        <strong>53</strong> en superficie y <strong>19</strong> mixtos.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .b5a-section {
+    padding: 80px 0 60px;
+    background: var(--bg-primary);
+  }
+
+  .b5a-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Header */
+  .b5a-header {
+    margin-bottom: 40px;
+  }
+
+  .b5a-badge {
+    display: inline-block;
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--accent-lime);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    padding: 4px 14px;
+    border-radius: 999px;
+    background: rgba(193, 214, 91, 0.08);
+    border: 1px solid rgba(193, 214, 91, 0.15);
+  }
+
+  .b5a-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 12px;
+    letter-spacing: -0.5px;
+  }
+
+  .b5a-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    max-width: 680px;
+    margin: 0;
+  }
+
+  .b5a-subtitle strong {
+    color: var(--accent-lime-light);
+  }
+
+  /* Chart wrapper */
+  .b5a-chart-wrapper {
+    padding: 24px;
+    border-radius: 16px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    margin-bottom: 28px;
+  }
+
+  /* Insight */
+  .b5a-insight {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px 24px;
+    border-radius: 12px;
+    background: rgba(193, 214, 91, 0.04);
+    border: 1px solid rgba(193, 214, 91, 0.12);
+  }
+
+  .b5a-insight__icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .b5a-insight__text {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .b5a-insight__text strong {
+    color: var(--accent-lime-light);
+  }
+</style>

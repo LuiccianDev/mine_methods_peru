@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "analysis": "Estado de desarrollo vs Metodo",
+    "total_registros": 3055,
+    "estados_desarrollo": ["Producer", "Past Producer", "Prospect", "Occurrence", "Otros"],
+    "metodos": ["Underground", "Surface", "Surface/Underground", "Unknown"]
+  },
+  "datos": [
+    {
+      "dev_stat_label": "Producer",
+      "Underground": 122,
+      "Surface": 53,
+      "Surface/Underground": 19,
+      "Unknown": 454
+    },
+    {
+      "dev_stat_label": "Past Producer",
+      "Underground": 142,
+      "Surface": 28,
+      "Surface/Underground": 28,
+      "Unknown": 554
+    },
+    {
+      "dev_stat_label": "Prospect",
+      "Underground": 55,
+      "Surface": 27,
+      "Surface/Underground": 8,
+      "Unknown": 238
+    },
+    {
+      "dev_stat_label": "Occurrence",
+      "Underground": 122,
+      "Surface": 48,
+      "Surface/Underground": 16,
+      "Unknown": 1072
+    },
+    {
+      "dev_stat_label": "Otros",
+      "Underground": 15,
+      "Surface": 3,
+      "Surface/Underground": 3,
+      "Unknown": 48
+    }
+  ]
+}

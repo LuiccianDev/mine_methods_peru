@@ -1,0 +1,102 @@
+---
+
+---
+
+<section class="w-[80%] mx-auto">
+  <div class="timeline-wrap border-l border-r border-white/20">
+    <!-- Tick ruler -->
+    <div class="tick-ruler">
+      {
+        Array.from({ length: 50 }).map((_, i) => (
+          <span class={`tick ${i % 5 === 0 ? 'tick-major' : ''}`} />
+        ))
+      }
+    </div>
+
+    <!-- Clock needle below ticks -->
+    <div class="ruler-needle">
+      <time id="timeline-clock" class="ruler-needle__time">--:-- --</time>
+      <div class="ruler-needle__stem"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const clock = document.getElementById('timeline-clock') as HTMLElement | null
+  const tick = () => {
+    if (clock)
+      clock.textContent = new Date().toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,
+      })
+  }
+  tick()
+  setInterval(tick, 1000)
+</script>
+
+<style>
+  .timeline-wrap {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+  }
+
+  /* ── Tick ruler ─────────────────────────────────────────── */
+  .tick-ruler {
+    display: flex;
+    align-items: flex-start;
+    height: 40px;
+    width: 100%;
+    background: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    overflow: hidden;
+    gap: 0;
+  }
+
+  .tick {
+    flex: 1;
+    display: block;
+    height: 20px;
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    margin-top: 0;
+  }
+
+  .tick-major {
+    height: 40px;
+    border-left-color: 0.1px rgba(255, 255, 255, 0.5);
+  }
+
+  /* ── Clock needle below ticks ──────────────────────────── */
+  .ruler-needle {
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    bottom: 0;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 6px;
+    gap: 4px;
+  }
+
+  .ruler-needle__time {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    background: transparent;
+    padding: 2px 10px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+
+  .ruler-needle__stem {
+    flex: 1;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.35);
+  }
+</style>

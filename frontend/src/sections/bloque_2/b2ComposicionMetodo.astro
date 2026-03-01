@@ -1,0 +1,127 @@
+---
+import stackedData from '../../data/B2/bloque_2_stacked_mineral_metodo_known.json'
+import B2StackedMineralMetodo from '../../components/charts/B2StackedMineralMetodo'
+
+const totalKnown = stackedData.total_known_records_top10
+---
+
+<section class="b2s-section w-[80%] mx-auto border-l border-r border-b border-white/20">
+  <div class="b2s-inner">
+    <!-- Section header -->
+    <div class="b2s-header">
+      <span class="b2s-badge">BLOQUE 02 · COMPOSICIÓN</span>
+      <h2 class="b2s-title">Composición Real por Mineral</h2>
+      <p class="b2s-subtitle">
+        Distribución porcentual de métodos de extracción entre los
+        <strong>{totalKnown.toLocaleString('es-PE')}</strong> registros con método identificado. Excluye
+        los datos desconocidos para revelar la composición real de cada mineral.
+      </p>
+    </div>
+
+    <!-- Stacked bar chart -->
+    <div class="b2s-chart-wrapper">
+      <B2StackedMineralMetodo data={stackedData} client:only="react" />
+    </div>
+
+    <!-- Contextual insight -->
+    <div class="b2s-insight">
+      <span class="b2s-insight__icon">⛏</span>
+      <p class="b2s-insight__text">
+        El <strong>Oro</strong> (84%) y el <strong>Plomo</strong> (78%) son los minerales más asociados
+        a la extracción subterránea. En el extremo opuesto, la
+        <strong>Caliza</strong> se extrae casi exclusivamente en superficie (91%), coherente con su obtención
+        en canteras a cielo abierto.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .b2s-section {
+    padding: 60px 0 60px;
+    background: var(--bg-primary);
+  }
+
+  .b2s-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Header */
+  .b2s-header {
+    margin-bottom: 40px;
+  }
+
+  .b2s-badge {
+    display: inline-block;
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--accent-lime);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    padding: 4px 14px;
+    border-radius: 999px;
+    background: rgba(193, 214, 91, 0.08);
+    border: 1px solid rgba(193, 214, 91, 0.15);
+  }
+
+  .b2s-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 12px;
+    letter-spacing: -0.5px;
+  }
+
+  .b2s-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    max-width: 680px;
+    margin: 0;
+  }
+
+  .b2s-subtitle strong {
+    color: var(--accent-lime-light);
+  }
+
+  /* Chart wrapper */
+  .b2s-chart-wrapper {
+    padding: 24px;
+    border-radius: 16px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    margin-bottom: 28px;
+  }
+
+  /* Insight */
+  .b2s-insight {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px 24px;
+    border-radius: 12px;
+    background: rgba(193, 214, 91, 0.04);
+    border: 1px solid rgba(193, 214, 91, 0.12);
+  }
+
+  .b2s-insight__icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .b2s-insight__text {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .b2s-insight__text strong {
+    color: var(--accent-lime-light);
+  }
+</style>

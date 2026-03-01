@@ -1,0 +1,128 @@
+---
+import graficaData from '../../data/B4/bloque_4_metodo_vs_escala_grafica.json'
+import B4StackedMetodoEscala from '../../components/charts/B4StackedMetodoEscala'
+
+const totalRegistros = graficaData.metadata.total_registros
+---
+
+<section class="b4e-section w-[80%] mx-auto border border-white/20">
+  <div class="b4e-inner">
+    <!-- Section header -->
+    <div class="b4e-header">
+      <span class="b4e-badge">BLOQUE 04 · ESCALA PRODUCTIVA</span>
+      <h2 class="b4e-title">Método de Extracción vs Escala Productiva</h2>
+      <p class="b4e-subtitle">
+        Distribución absoluta de <strong>{totalRegistros.toLocaleString('es-PE')}</strong> registros según
+        método de extracción y escala productiva. Se excluyen los registros con escala desconocida para
+        mostrar la relación real entre el tipo de minería y el tamaño de operación.
+      </p>
+    </div>
+
+    <!-- Chart container -->
+    <div class="b4e-chart-wrapper">
+      <B4StackedMetodoEscala data={graficaData} client:only="react" />
+    </div>
+
+    <!-- Contextual insight -->
+    <div class="b4e-insight">
+      <span class="b4e-insight__icon">⚖️</span>
+      <p class="b4e-insight__text">
+        La minería <strong>subterránea</strong> domina tanto a escala pequeña (<strong>167</strong> sitios)
+        como grande (<strong>143</strong>), reflejando su versatilidad operativa en Perú. En
+        contraste, la minería en <strong>superficie</strong> presenta la mayor proporción de registros
+        <strong>sin dato</strong> de escala (25.9%), lo que sugiere un déficit de información particularmente
+        agudo en las operaciones a cielo abierto.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .b4e-section {
+    padding: 80px 0 60px;
+    background: var(--bg-primary);
+  }
+
+  .b4e-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Header */
+  .b4e-header {
+    margin-bottom: 40px;
+  }
+
+  .b4e-badge {
+    display: inline-block;
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--accent-lime);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    padding: 4px 14px;
+    border-radius: 999px;
+    background: rgba(193, 214, 91, 0.08);
+    border: 1px solid rgba(193, 214, 91, 0.15);
+  }
+
+  .b4e-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 12px;
+    letter-spacing: -0.5px;
+  }
+
+  .b4e-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    max-width: 680px;
+    margin: 0;
+  }
+
+  .b4e-subtitle strong {
+    color: var(--accent-lime-light);
+  }
+
+  /* Chart wrapper */
+  .b4e-chart-wrapper {
+    padding: 24px;
+    border-radius: 16px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    margin-bottom: 28px;
+  }
+
+  /* Insight */
+  .b4e-insight {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px 24px;
+    border-radius: 12px;
+    background: rgba(193, 214, 91, 0.04);
+    border: 1px solid rgba(193, 214, 91, 0.12);
+  }
+
+  .b4e-insight__icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .b4e-insight__text {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .b4e-insight__text strong {
+    color: var(--accent-lime-light);
+  }
+</style>

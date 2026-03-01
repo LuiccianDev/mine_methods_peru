@@ -1,0 +1,525 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "(Facility) Ilo Copper Refinery",
+        "state": "Moquegua",
+        "mineral_principal": "Copper",
+        "work_type": "Unknown"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.36629, -17.48937]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "(Facility) Ilo Copper Smelter",
+        "state": "Moquegua",
+        "mineral_principal": "Copper",
+        "work_type": "Unknown"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.36629, -17.48097]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "(Facility) La Oroya - Lead Smelter",
+        "state": "Junin",
+        "mineral_principal": "Lead",
+        "work_type": "Unknown"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.89971, -11.51459]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "(Facility) La Oroya - Zinc Refinery",
+        "state": "Junin",
+        "mineral_principal": "Zinc",
+        "work_type": "Unknown"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.93301, -11.51459]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "(Facility) La Oroya Copper Refinery",
+        "state": "Junin",
+        "mineral_principal": "Copper",
+        "work_type": "Unknown"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.89971, -11.52709]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "(Facility) La Oroya Copper Smelter",
+        "state": "Junin",
+        "mineral_principal": "Silver",
+        "work_type": "Unknown"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.89971, -11.52709]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "15 De Noviembre, Cantera",
+        "state": "Ica",
+        "mineral_principal": "Kaolin",
+        "work_type": "Unknown"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-74.94969, -15.04776]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "16 De Octubre, Mina",
+        "state": "Cusco",
+        "mineral_principal": "Lead",
+        "work_type": "Underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-72.87131, -13.36142]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "18 De Mayo Mina",
+        "state": "Cusco",
+        "mineral_principal": "Lead",
+        "work_type": "Underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.55516, -13.30559]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "27 De Enero No. 2, Mina",
+        "state": "Apurimac",
+        "mineral_principal": "Copper",
+        "work_type": "Underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-72.98186, -14.46694]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "28 De Agosto Mina",
+        "state": "Tacna",
+        "mineral_principal": "Lead",
+        "work_type": "Unknown"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-69.85372, -17.66849]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "28 De Julio Prospect",
+        "state": "Tacna",
+        "mineral_principal": "Silver",
+        "work_type": "Unknown"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-70.49957, -17.41434]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "33 Narices, Prospecto",
+        "state": "Madre De Dios",
+        "mineral_principal": "Gold",
+        "work_type": "Unknown"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-70.01207, -12.80283]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "4 De Julio, Mina",
+        "state": "Puno",
+        "mineral_principal": "Copper",
+        "work_type": "Surface/Underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-69.87123, -14.96275]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "6 De Agosto, Mina",
+        "state": "Moquegua",
+        "mineral_principal": "Silver",
+        "work_type": "Surface/Underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-70.79791, -16.36854]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Abdulia Seis, Mina",
+        "state": "Puno",
+        "mineral_principal": "Copper",
+        "work_type": "Underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-70.6129, -15.67273]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Accion, Cantera",
+        "state": "Lima",
+        "mineral_principal": "Sand and Gravel",
+        "work_type": "Surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.87891, -12.08536]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Ada Sofia, Mina",
+        "state": "Junin",
+        "mineral_principal": "Lead",
+        "work_type": "Underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.81665, -11.89287]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Adelaida, Mina",
+        "state": "Ica",
+        "mineral_principal": "Copper",
+        "work_type": "Surface/Underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.59692, -13.9964]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Adelante, Cantera",
+        "state": "Lima",
+        "mineral_principal": "Sand and Gravel",
+        "work_type": "Surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.87891, -12.08536]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Aerolito Iv, Prospecto",
+        "state": "Junin",
+        "mineral_principal": "Zinc",
+        "work_type": "Underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.975, -11.76955]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Aguas Cochas",
+        "state": "Lima",
+        "mineral_principal": "Copper",
+        "work_type": "Surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.44973, -11.88787]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Aguas Verdes",
+        "state": "Ayacucho",
+        "mineral_principal": "Copper",
+        "work_type": "Underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.90776, -15.38104]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Aguas Verdes Contact Metasomatic Copper 35",
+        "state": "Ayacucho",
+        "mineral_principal": "Copper",
+        "work_type": "Underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.89966, -15.28108]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Aguas Verdes Mina",
+        "state": "Ayacucho",
+        "mineral_principal": "Silver",
+        "work_type": "Underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.88299, -15.31442]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Aguas Verdes No. 2",
+        "state": "Ayacucho",
+        "mineral_principal": "Silver",
+        "work_type": "Underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.8966, -15.31858]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Alguna Cosa",
+        "state": "Tacna",
+        "mineral_principal": "Boron-Borates",
+        "work_type": "Surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-69.90511, -17.21157]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Ancoccala, Mina",
+        "state": "Puno",
+        "mineral_principal": "Tin",
+        "work_type": "Surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-70.3154, -14.93525]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Antamina",
+        "state": "Ancash",
+        "mineral_principal": "Copper",
+        "work_type": "Surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.08305, -9.53127]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Arenal Pedreros, Mina",
+        "state": "Lima",
+        "mineral_principal": "Sand and Gravel",
+        "work_type": "Surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.95224, -12.00037]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Asuncion, Mina",
+        "state": "Tacna",
+        "mineral_principal": "Copper",
+        "work_type": "Surface/Underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-69.95788, -17.66433]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Augusta Elena Segunda, Mina",
+        "state": "Apurimac",
+        "mineral_principal": "Lead",
+        "work_type": "Surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.07297, -14.58388]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Augusta V, Mina.",
+        "state": "Cusco",
+        "mineral_principal": "Antimony",
+        "work_type": "Surface/Underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.03209, -14.32444]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Aurea, Mina",
+        "state": "Cusco",
+        "mineral_principal": "Copper",
+        "work_type": "Surface/Underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.79961, -14.34778]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Berenguela",
+        "state": "Puno",
+        "mineral_principal": "Silver",
+        "work_type": "Surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-70.58287, -15.66443]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Betty, Mina",
+        "state": "La Libertad",
+        "mineral_principal": "Kaolin",
+        "work_type": "Surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-78.01144, -7.80054]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Cabeza De Negro",
+        "state": "Ica",
+        "mineral_principal": "Copper",
+        "work_type": "Surface/Underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.5022, -14.00029]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Cancharani, Mina",
+        "state": "Puno",
+        "mineral_principal": "Copper",
+        "work_type": "Surface/Underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-70.35124, -15.6694]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Capac, Prospecto",
+        "state": "Junin",
+        "mineral_principal": "Barium-Barite",
+        "work_type": "Surface/Underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.56471, -11.34122]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_name": "Capella No. 1, Mina",
+        "state": "Lima",
+        "mineral_principal": "Silver",
+        "work_type": "Surface/Underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.29444, -12.67451]
+      }
+    }
+  ]
+}

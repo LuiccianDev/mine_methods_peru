@@ -1,11 +1,36 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro'
+import Hero from '../sections/hero.astro'
+import ContextoMineria from '../sections/contextoMineria.astro'
+import Footer from '../sections/footer.astro'
+import B1Bloque1 from '../sections/bloque_1/b1Bloque1.astro'
+import B2HeatmapMinerales from '../sections/bloque_2/b2HeatmapMinerales.astro'
+import B2ComposicionMetodo from '../sections/bloque_2/b2ComposicionMetodo.astro'
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import B3MetodoAbsoluto from '../sections/bloque_3/b3MetodoAbsoluto.astro'
+import B3HeatmapTerritorial from '../sections/bloque_3/b3HeatmapTerritorial.astro'
+import B3MapaSitios from '../sections/bloque_3/b3MapaSitios.astro'
+import B4MetodoEscala from '../sections/bloque_4/b4MetodoEscala.astro'
+import B5MetodoAbsoluto from '../sections/bloque_5/b5MetodoAbsoluto.astro'
+import Conclusiones from '../sections/conclusiones.astro'
+import Header from '../components/Header.astro'
+import TimelineBar from '../components/TimelineBar.astro'
 ---
 
 <Layout>
-	<Welcome />
+  <Header />
+  <TimelineBar />
+  <Hero />
+  <ContextoMineria />
+  <B1Bloque1 />
+  <B2HeatmapMinerales />
+  <B2ComposicionMetodo />
+
+  <B3MetodoAbsoluto />
+  <B3HeatmapTerritorial />
+  <B3MapaSitios />
+  <B4MetodoEscala />
+  <B5MetodoAbsoluto />
+  <Conclusiones />
+  <Footer />
 </Layout>
