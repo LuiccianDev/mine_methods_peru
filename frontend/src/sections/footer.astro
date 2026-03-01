@@ -6,30 +6,54 @@
   <div class="footer-glow"></div>
 
   <div class="footer-content">
-    <!-- Top row: brand + nav -->
-    <div class="footer-top">
-      <div class="footer-brand">
-        <span class="footer-logo-icon">⛏</span>
-        <span class="footer-logo-text">MineríaPE</span>
-        <p class="footer-tagline">
-          Data-driven decision making<br />for sustainable mining strategy.
-        </p>
+    <!-- Main grid: brand/challenge + nav columns -->
+    <div class="footer-main-grid">
+      <!-- Left side: brand + challenge -->
+      <div class="footer-left">
+        <div class="footer-brand">
+          <div class="footer-brand-header">
+            <span class="footer-logo-text">LuiccianDev</span>
+          </div>
+          <p class="footer-tagline">
+            Visualización de datos territoriales<br />para análisis de minas en el Perú
+          </p>
+        </div>
+
+        <!-- Challenge & Agradecimiento -->
+        <div class="footer-challenge">
+          <span class="footer-challenge__badge">CODEDEX · CHALLENGE</span>
+          <h4 class="footer-challenge__title">February 2026: Dataset Challenge</h4>
+          <p class="footer-challenge__desc">
+            Este proyecto fue desarrollado como parte del
+            <a
+              href="https://www.codedex.io/community/monthly-challenge/fuyhn9sB6nFKfPKXSvtF"
+              target="_blank"
+              class="footer-challenge__link"
+            >Monthly Challenge de CodeDex</a>,
+            una comunidad que inspira a aprender y crear con datos.
+          </p>
+          <p class="footer-challenge__thanks">
+            Gracias a <strong>CodeDex</strong> por la oportunidad de explorar, visualizar y
+            compartir este análisis territorial de la minería peruana.
+          </p>
+        </div>
       </div>
 
-      <div class="footer-links-grid">
+      <!-- Right side: navigation columns -->
+      <div class="footer-nav-columns">
         <div class="footer-col">
-          <h4>Navegación</h4>
+          <h4>Secciones</h4>
           <a href="#methodology">Metodología</a>
-          <a href="#charts">Análisis</a>
+          <a href="#charts">Análisis Visual</a>
           <a href="#map">Mapa Interactivo</a>
-          <a href="#synthesis">Síntesis Estratégica</a>
+          <a href="#synthesis">Conclusiones</a>
         </div>
         <div class="footer-col">
-          <h4>Tecnologías</h4>
-          <a href="#">Python + Pandas</a>
-          <a href="#">Astro + React</a>
-          <a href="#">ECharts + Leaflet</a>
-          <a href="#">Tailwind CSS</a>
+          <h4>Stack</h4>
+          <a href="https://www.astro.build" target="_blank">Astro</a>
+          <a href="https://react.dev" target="_blank">React 19</a>
+          <a href="https://echarts.apache.org" target="_blank">ECharts</a>
+          <a href="https://tailwindcss.com" target="_blank">Tailwind v4</a>
         </div>
       </div>
     </div>
@@ -37,14 +61,16 @@
     <!-- Divider -->
     <div class="footer-divider"></div>
 
-    <!-- Bottom row: source + copyright -->
+    <!-- Bottom row: copyright + social links -->
     <div class="footer-bottom">
-      <p class="footer-source">
-        <strong>Fuente:</strong>
-      </p>
       <p class="footer-copy">
-        &copy; {new Date().getFullYear()} · Análisis de Métodos de Extracción Minera en el Perú
+        © {new Date().getFullYear()} LuiccianDev · Análisis Territorial de Métodos de Extracción
+        Minera en el Perú
       </p>
+      <div class="footer-social">
+        <a href="https://github.com/LuiccianDev" target="_blank" aria-label="GitHub">GitHub</a>
+        <a href="https://www.linkedin.com/in/william-guevara-lazaro-79274b2a3/" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+      </div>
     </div>
   </div>
 </footer>
@@ -54,7 +80,7 @@
     position: relative;
     background: #050505;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
-    padding: 60px 24px 32px;
+    padding: 80px 40px 32px;
     overflow: hidden;
   }
 
@@ -65,124 +91,210 @@
     transform: translateX(-50%);
     width: 600px;
     height: 300px;
-    background: radial-gradient(ellipse, rgba(192, 7, 7, 0.08) 0%, transparent 70%);
+    background: radial-gradient(ellipse, rgba(193, 214, 91, 0.03) 0%, transparent 70%);
     pointer-events: none;
   }
 
   .footer-content {
     position: relative;
     z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
-  /* --- Top row --- */
-  .footer-top {
+  /* --- Main Grid --- */
+  .footer-main-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 80px;
+    margin-bottom: 48px;
+  }
+
+  @media (max-width: 900px) {
+    .footer-main-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
+
+  /* --- Left Side --- */
+  .footer-left {
     display: flex;
-    justify-content: space-between;
-    gap: 48px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 32px;
   }
 
+  /* --- Brand Section --- */
   .footer-brand {
-    max-width: 280px;
+    max-width: 400px;
   }
 
-  .footer-logo-icon {
-    font-size: 1.4rem;
-    margin-right: 8px;
+  .footer-brand-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
   }
 
   .footer-logo-text {
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: #ffffff;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
   }
 
   .footer-tagline {
-    margin-top: 16px;
-    font-size: 0.88rem;
-    color: #606060;
-    line-height: 1.6;
+    margin: 0;
+    font-size: 0.9rem;
+    color: #707070;
+    line-height: 1.7;
   }
 
-  /* --- Links grid --- */
-  .footer-links-grid {
-    display: flex;
-    gap: 56px;
-    flex-wrap: wrap;
+  /* --- Challenge & Agradecimiento --- */
+  .footer-challenge {
+    padding: 20px 24px;
+    background: rgba(193, 214, 91, 0.04);
+    border: 1px solid rgba(193, 214, 91, 0.12);
+    border-radius: 8px;
+  }
+
+  .footer-challenge__badge {
+    display: inline-block;
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #c1d65b;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: rgba(193, 214, 91, 0.1);
+    border: 1px solid rgba(193, 214, 91, 0.2);
+    margin-bottom: 12px;
+  }
+
+  .footer-challenge__title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin: 0 0 10px;
+    letter-spacing: -0.3px;
+  }
+
+  .footer-challenge__desc {
+    font-size: 0.82rem;
+    color: #808080;
+    line-height: 1.65;
+    margin: 0 0 10px;
+  }
+
+  .footer-challenge__link {
+    color: #c1d65b;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+
+  .footer-challenge__link:hover {
+    color: #d4e87e;
+    text-decoration: underline;
+  }
+
+  .footer-challenge__thanks {
+    font-size: 0.8rem;
+    color: #656565;
+    line-height: 1.6;
+    margin: 0;
+    font-style: italic;
+  }
+
+  .footer-challenge__thanks strong {
+    color: #c1d65b;
+    font-style: normal;
+  }
+
+  /* --- Navigation Columns --- */
+  .footer-nav-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    align-content: start;
+  }
+
+  @media (max-width: 480px) {
+    .footer-nav-columns {
+      grid-template-columns: 1fr;
+    }
   }
 
   .footer-col {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
 
   .footer-col h4 {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 1.8px;
     text-transform: uppercase;
     color: #a0a0a0;
-    margin: 0 0 6px;
+    margin: 0 0 4px;
   }
 
   .footer-col a {
-    color: #606060;
+    color: #656565;
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     transition: color 0.2s ease;
+    line-height: 1.4;
   }
 
   .footer-col a:hover {
-    color: #ffffff;
+    color: #c1d65b;
   }
 
   /* --- Divider --- */
   .footer-divider {
     height: 1px;
-    background: rgba(255, 255, 255, 0.06);
-    margin: 40px 0 24px;
+    background: rgba(255, 255, 255, 0.05);
+    margin: 0 0 32px;
   }
 
-  /* --- Bottom row --- */
+  /* --- Bottom Row --- */
   .footer-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 16px;
   }
 
-  .footer-source {
+  .footer-copy {
     font-size: 0.8rem;
     color: #505050;
     margin: 0;
   }
 
-  .footer-source strong {
+  .footer-social {
+    display: flex;
+    gap: 24px;
+  }
+
+  .footer-social a {
+    font-size: 0.85rem;
+    color: #656565;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer-social a:hover {
     color: #c1d65b;
   }
 
-  .footer-copy {
-    font-size: 0.78rem;
-    color: #404040;
-    margin: 0;
-  }
-
-  @media (max-width: 768px) {
-    .footer-top {
-      flex-direction: column;
-      gap: 32px;
-    }
-
-    .footer-links-grid {
-      gap: 32px;
-    }
-
+  @media (max-width: 600px) {
     .footer-bottom {
       flex-direction: column;
       align-items: flex-start;
+      gap: 20px;
     }
   }
 </style>
