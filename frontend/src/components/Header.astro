@@ -5,7 +5,7 @@
 <header class="header-wrap">
   <nav class="nav-container">
     <div class="logo">
-      <a href="/">Luiccian</a>
+      <a href="/" class="logo-link">Luiccian</a>
     </div>
     <div class="nav-links">
       <a href="#methodology" class="nav-link">Methodology</a>
@@ -15,7 +15,7 @@
     <div class="nav-actions">
       <a href="#synthesis" class="btn-outline">View Findings</a>
       <a
-        href="https://github.com/LuiccianDev/mine_methods_peru/tree/master/analysis/script"
+        href="https://github.com/LuiccianDev/mine_methods_peru/blob/main/analysis/script/analisis_mineria_peru.ipynb"
         class="btn-solid">NooteBook</a
       >
     </div>
@@ -24,12 +24,22 @@
 
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
+    const logoLink = document.querySelector('.logo-link')
+    if (logoLink) {
+      logoLink.addEventListener('click', (e) => {
+        e.preventDefault()
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      })
+    }
+
     const navLinks = document.querySelectorAll('.nav-link, .btn-outline, .btn-solid')
 
     navLinks.forEach((link) => {
       link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href') ?? ''
+        if (!href.startsWith('#')) return
         e.preventDefault()
-        const targetId = link.getAttribute('href')?.slice(1)
+        const targetId = href.slice(1)
         if (!targetId) return
 
         const targetElement = document.getElementById(targetId)
