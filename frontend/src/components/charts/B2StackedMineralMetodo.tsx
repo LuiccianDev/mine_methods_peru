@@ -20,22 +20,22 @@ const METHOD_COLORS: Record<string, string> = {
 }
 
 const METHOD_LABELS: Record<string, string> = {
-  Underground: 'Subterráneo',
-  Surface: 'Superficie',
-  'Surface/Underground': 'Sup. / Subt.',
+  Underground: 'Underground',
+  Surface: 'Surface',
+  'Surface/Underground': 'Surf. / Undergr.',
 }
 
 const MINERAL_LABELS: Record<string, string> = {
-  Copper: 'Cobre',
-  Silver: 'Plata',
-  Lead: 'Plomo',
+  Copper: 'Copper',
+  Silver: 'Silver',
+  Lead: 'Lead',
   Zinc: 'Zinc',
-  Gold: 'Oro',
-  Desconocido: 'Desconocido',
-  Antimony: 'Antimonio',
-  Iron: 'Hierro',
-  Bentonite: 'Bentonita',
-  Limestone: 'Caliza',
+  Gold: 'Gold',
+  Desconocido: 'Unknown',
+  Antimony: 'Antimony',
+  Iron: 'Iron',
+  Bentonite: 'Bentonite',
+  Limestone: 'Limestone',
 }
 
 export default function B2StackedMineralMetodo({ data }: B2StackedMineralMetodoProps) {
@@ -106,7 +106,7 @@ export default function B2StackedMineralMetodo({ data }: B2StackedMineralMetodoP
                 ${MINERAL_LABELS[mineral] || mineral}
               </div>
               <div style="font-size: 11px; color: #707070; margin-bottom: 8px;">
-                Muestra: ${sampleSize} registros
+                Sample: ${sampleSize} records
               </div>
           `
           for (const p of params) {

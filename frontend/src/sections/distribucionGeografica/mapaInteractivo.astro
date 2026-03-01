@@ -10,12 +10,12 @@ const uniqueRegions = [...new Set(geojsonData.features.map((f: any) => f.propert
   <div class="b3m-inner">
     <!-- Section header -->
     <div class="b3m-header">
-      <span class="b3m-badge">BLOQUE 03 · MAPA EXPLORATORIO</span>
-      <h2 class="b3m-title">Sitios Mineros del Perú</h2>
+      <span class="b3m-badge">BLOCK 03 · EXPLORATORY MAP</span>
+      <h2 class="b3m-title">Mining Sites of Peru</h2>
       <p class="b3m-subtitle">
-        Mapa interactivo con una muestra de <strong>{totalSites}</strong> sitios mineros distribuidos
-        en <strong>{uniqueRegions}</strong> regiones. Cada punto está coloreado por su método de extracción
-        — haz clic para ver los detalles del sitio.
+        Interactive map with a sample of <strong>{totalSites}</strong> mining sites distributed
+        across <strong>{uniqueRegions}</strong> regions. Each point is color-coded by its extraction
+        method — click to view the site's details.
       </p>
     </div>
 
@@ -28,11 +28,11 @@ const uniqueRegions = [...new Set(geojsonData.features.map((f: any) => f.propert
     <div class="b3m-insight">
       <span class="b3m-insight__icon">🔍</span>
       <p class="b3m-insight__text">
-        Se observa una concentración en la sierra sur (<strong>Puno</strong>,
-        <strong>Cusco</strong>, <strong>Arequipa</strong>) donde predomina la minería subterránea.
-        La costa muestra mayor presencia de extracción superficial, vinculada a canteras y depósitos
-        aluviales. Los sitios con método <strong>desconocido</strong> incluyen plantas de fundición y
-        refinerías que no realizan extracción directa.
+        A concentration is observed in the southern highlands (<strong>Puno</strong>,
+        <strong>Cusco</strong>, <strong>Arequipa</strong>) where underground mining predominates.
+        The coast shows a greater presence of surface extraction, linked to quarries and
+        alluvial deposits. Sites with an <strong>unknown</strong> method include smelting plants and
+        refineries that do not perform direct extraction.
       </p>
     </div>
   </div>

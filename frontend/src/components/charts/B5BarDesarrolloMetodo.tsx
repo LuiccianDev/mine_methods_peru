@@ -31,18 +31,18 @@ const METHOD_COLORS: Record<string, string> = {
 }
 
 const METHOD_LABELS: Record<string, string> = {
-  Underground: 'Subterráneo',
-  Surface: 'Superficie',
-  'Surface/Underground': 'Sup. / Subt.',
-  Unknown: 'Desconocido',
+  Underground: 'Underground',
+  Surface: 'Surface',
+  'Surface/Underground': 'Surf. / Undergr.',
+  Unknown: 'Unknown',
 }
 
 const DEV_LABELS: Record<string, string> = {
-  Producer: 'Productor',
-  'Past Producer': 'Ex-Productor',
-  Prospect: 'Prospecto',
-  Occurrence: 'Ocurrencia',
-  Otros: 'Otros',
+  Producer: 'Producer',
+  'Past Producer': 'Past Producer',
+  Prospect: 'Prospect',
+  Occurrence: 'Occurrence',
+  Otros: 'Other',
 }
 
 const METHOD_KEYS = ['Underground', 'Surface', 'Surface/Underground', 'Unknown'] as const
@@ -120,7 +120,7 @@ export default function B5BarDesarrolloMetodo({ data }: B5BarDesarrolloMetodoPro
                 ${devLabel}
               </div>
               <div style="font-size: 11px; color: #707070; margin-bottom: 8px;">
-                Total: ${total} registros
+                Total: ${total} records
               </div>
           `
           for (const p of params) {

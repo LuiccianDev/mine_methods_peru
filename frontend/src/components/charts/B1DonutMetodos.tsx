@@ -19,10 +19,10 @@ const METHOD_COLORS: Record<string, string> = {
 }
 
 const METHOD_LABELS: Record<string, string> = {
-  Underground: 'Subterráneo',
-  Surface: 'Superficie',
-  'Surface/Underground': 'Superficie / Subterráneo',
-  Unknown: 'Desconocido',
+  Underground: 'Underground',
+  Surface: 'Surface',
+  'Surface/Underground': 'Surface / Underground',
+  Unknown: 'Unknown',
 }
 
 export default function B1DonutMetodos({ data }: B1DonutMetodosProps) {
@@ -55,11 +55,11 @@ export default function B1DonutMetodos({ data }: B1DonutMetodosProps) {
                 ${label}
               </div>
               <div style="display: flex; justify-content: space-between; gap: 18px;">
-                <span style="color: #a0a0a0;">Frecuencia</span>
+                <span style="color: #a0a0a0;">Frequency</span>
                 <span style="font-weight: 600; color: #fff;">${params.data.frequency.toLocaleString('es-PE')}</span>
               </div>
               <div style="display: flex; justify-content: space-between; gap: 18px;">
-                <span style="color: #a0a0a0;">Porcentaje</span>
+                <span style="color: #a0a0a0;">Percentage</span>
                 <span style="font-weight: 600; color: #fff;">${params.data.percentage}%</span>
               </div>
             </div>
@@ -83,7 +83,7 @@ export default function B1DonutMetodos({ data }: B1DonutMetodosProps) {
       },
       series: [
         {
-          name: 'Métodos de Extracción',
+          name: 'Extraction Methods',
           type: 'pie',
           radius: ['48%', '75%'],
           center: ['50%', '55%'],
@@ -97,7 +97,7 @@ export default function B1DonutMetodos({ data }: B1DonutMetodosProps) {
             show: true,
             position: 'center',
             formatter: () =>
-              [`{total|${total.toLocaleString('es-PE')}}`, '{label|sitios mineros}'].join('\n'),
+              [`{total|${total.toLocaleString('es-PE')}}`, '{label|mining sites}'].join('\n'),
             rich: {
               total: {
                 fontSize: 32,

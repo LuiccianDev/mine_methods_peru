@@ -12,23 +12,23 @@ interface B2HeatmapMineralMetodoProps {
 }
 
 const METHOD_LABELS: Record<string, string> = {
-  Underground: 'Subterráneo',
-  Surface: 'Superficie',
-  'Surface/Underground': 'Sup. / Subt.',
-  Unknown: 'Desconocido',
+  Underground: 'Underground',
+  Surface: 'Surface',
+  'Surface/Underground': 'Surf. / Undergr.',
+  Unknown: 'Unknown',
 }
 
 const MINERAL_LABELS: Record<string, string> = {
-  Copper: 'Cobre',
-  Silver: 'Plata',
-  Lead: 'Plomo',
+  Copper: 'Copper',
+  Silver: 'Silver',
+  Lead: 'Lead',
   Zinc: 'Zinc',
-  Gold: 'Oro',
-  Desconocido: 'Desconocido',
-  Antimony: 'Antimonio',
-  Iron: 'Hierro',
-  Bentonite: 'Bentonita',
-  Limestone: 'Caliza',
+  Gold: 'Gold',
+  Desconocido: 'Unknown',
+  Antimony: 'Antimony',
+  Iron: 'Iron',
+  Bentonite: 'Bentonite',
+  Limestone: 'Limestone',
 }
 
 export default function B2HeatmapMineralMetodo({ data }: B2HeatmapMineralMetodoProps) {
@@ -71,11 +71,11 @@ export default function B2HeatmapMineralMetodo({ data }: B2HeatmapMineralMetodoP
                 ${MINERAL_LABELS[mineral] || mineral}
               </div>
               <div style="display: flex; justify-content: space-between; gap: 18px;">
-                <span style="color: #a0a0a0;">Método</span>
+                <span style="color: #a0a0a0;">Method</span>
                 <span style="font-weight: 600; color: #fff;">${METHOD_LABELS[method] || method}</span>
               </div>
               <div style="display: flex; justify-content: space-between; gap: 18px;">
-                <span style="color: #a0a0a0;">Porcentaje</span>
+                <span style="color: #a0a0a0;">Percentage</span>
                 <span style="font-weight: 600; color: #fff;">${val}%</span>
               </div>
             </div>
@@ -133,7 +133,7 @@ export default function B2HeatmapMineralMetodo({ data }: B2HeatmapMineralMetodoP
       },
       series: [
         {
-          name: 'Mineral vs Método',
+          name: 'Mineral vs Method',
           type: 'heatmap',
           data: heatmapData,
           label: {

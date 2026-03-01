@@ -6,37 +6,37 @@
   <div class="ctx-inner">
     <!-- Header -->
     <div class="ctx-header">
-      <span class="ctx-badge">CONTEXTO · ANÁLISIS</span>
-      <h2 class="ctx-title">Sobre los Datos y el Análisis</h2>
+      <span class="ctx-badge">CONTEXT · ANALYSIS</span>
+      <h2 class="ctx-title">About the Data and Analysis</h2>
       <p class="ctx-subtitle">
-        El Perú es una de las principales potencias mineras del planeta. Este análisis explora los
-        <strong>3,055 sitios mineros</strong> de la data utilizada de 
+        Peru is one of the world's leading mining powers. This analysis explores the
+        <strong>3,055 mining sites</strong> in the dataset from
         <strong> <a href="https://www.kaggle.com/datasets/ramjasmaurya/mineral-ores-around-the-world/data">Mineral ores around the world</a></strong>
-        para responder una pregunta central.
+        to answer a central question.
       </p>
     </div>
 
     <!-- Central question -->
     <div class="ctx-question">
-      <span class="ctx-question__label">Pregunta central</span>
+      <span class="ctx-question__label">Central Question</span>
       <p class="ctx-question__text">
-        ¿Qué método de extracción domina en el Perú según el tipo de mineral y la región, y cómo se
-        relaciona con la escala productiva y el estado de desarrollo?
+        Which extraction method dominates in Peru according to mineral type and region, and how does it
+        relate to production scale and development status?
       </p>
     </div>
 
     <!-- Code block -->
     <div class="ctx-code-section">
-      <span class="ctx-code-section__label">Extracción de Datos de Perú</span>
+      <span class="ctx-code-section__label">Peru Data Extraction</span>
       <p class="ctx-code-section__desc">
-        Para obtener los datos utilizados en este análisis, se filtró el dataset original 
-        para extraer únicamente los sitios mineros de Perú:
+        To obtain the data used in this analysis, the original dataset was filtered
+        to extract only the mining sites from Peru:
       </p>
       <pre class="ctx-code-block"><code><span class="code-keyword">import</span> pandas <span class="code-keyword">as</span> pd
 
 df <span class="code-operator">=</span> pd<span class="code-operator">.</span><span class="code-function">read_csv</span>(<span class="code-string">"Mineral ores round the world.csv"</span>)
 
-<span class="code-comment"># Extracción de datos solo de Perú</span>
+<span class="code-comment"># Extract data for Peru only</span>
 df_peru <span class="code-operator">=</span> df[df[<span class="code-string">"country"</span>] <span class="code-operator">==</span> <span class="code-string">"Peru"</span>]</code></pre>
     </div>
 

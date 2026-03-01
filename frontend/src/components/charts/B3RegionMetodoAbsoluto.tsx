@@ -20,9 +20,9 @@ const METHOD_COLORS: Record<string, string> = {
 }
 
 const METHOD_LABELS: Record<string, string> = {
-  Underground: 'Subterráneo',
-  Surface: 'Superficie',
-  'Surface/Underground': 'Sup. / Subt.',
+  Underground: 'Underground',
+  Surface: 'Surface',
+  'Surface/Underground': 'Surf. / Undergr.',
 }
 
 const METHOD_KEYS = ['Underground', 'Surface', 'Surface/Underground']
@@ -95,7 +95,7 @@ export default function B3RegionMetodoAbsoluto({ data }: B3RegionMetodoAbsolutoP
                 ${region.region}
               </div>
               <div style="font-size: 11px; color: #707070; margin-bottom: 8px;">
-                Total: ${total} sitios conocidos
+                Total: ${total} known sites
               </div>
           `
           for (const p of params) {

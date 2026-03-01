@@ -32,16 +32,16 @@ const SCALE_COLORS: Record<string, string> = {
 }
 
 const SCALE_LABELS: Record<string, string> = {
-  Grande: 'Grande',
-  Mediano: 'Mediana',
-  Pequeño: 'Pequeña',
-  'Sin dato': 'Sin dato',
+  Grande: 'Large',
+  Mediano: 'Medium',
+  Pequeño: 'Small',
+  'Sin dato': 'No data',
 }
 
 const METHOD_LABELS: Record<string, string> = {
-  Underground: 'Subterráneo',
-  Surface: 'Superficie',
-  'Surface/Underground': 'Sup. / Subt.',
+  Underground: 'Underground',
+  Surface: 'Surface',
+  'Surface/Underground': 'Surf. / Undergr.',
 }
 
 const SCALE_KEYS = ['Grande', 'Mediano', 'Pequeño', 'Sin dato'] as const
@@ -119,7 +119,7 @@ export default function B4StackedMetodoEscala({ data }: B4StackedMetodoEscalaPro
                 ${methodName}
               </div>
               <div style="font-size: 11px; color: #707070; margin-bottom: 8px;">
-                Total: ${total} registros
+                Total: ${total} records
               </div>
           `
           for (const p of params) {

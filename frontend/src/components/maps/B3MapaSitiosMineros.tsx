@@ -35,17 +35,17 @@ const METHOD_COLORS: Record<string, string> = {
 }
 
 const METHOD_LABELS: Record<string, string> = {
-  Underground: 'Subterráneo',
-  Surface: 'Superficie',
-  'Surface/Underground': 'Sup. / Subt.',
-  Unknown: 'Desconocido',
+  Underground: 'Underground',
+  Surface: 'Surface',
+  'Surface/Underground': 'Surf. / Undergr.',
+  Unknown: 'Unknown',
 }
 
 const LEGEND_ITEMS = [
-  { key: 'Underground', label: 'Subterráneo', color: '#c1d65b' },
-  { key: 'Surface', label: 'Superficie', color: '#6ec6a0' },
-  { key: 'Surface/Underground', label: 'Sup. / Subt.', color: '#d4e57d' },
-  { key: 'Unknown', label: 'Desconocido', color: '#846248' },
+  { key: 'Underground', label: 'Underground', color: '#c1d65b' },
+  { key: 'Surface', label: 'Surface', color: '#6ec6a0' },
+  { key: 'Surface/Underground', label: 'Surf. / Undergr.', color: '#d4e57d' },
+  { key: 'Unknown', label: 'Unknown', color: '#846248' },
 ]
 
 function MapLegend() {
@@ -63,7 +63,7 @@ function MapLegend() {
         'background: rgba(10, 10, 10, 0.92); padding: 12px 16px; border-radius: 10px; border: 1px solid rgba(160, 160, 160, 0.12); backdrop-filter: blur(12px); font-family: Roboto Condensed, sans-serif;'
 
       let html =
-        '<div style="font-size: 11px; font-weight: 600; color: #707070; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">Método</div>'
+        '<div style="font-size: 11px; font-weight: 600; color: #707070; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">Method</div>'
       for (const item of LEGEND_ITEMS) {
         html += `
           <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
@@ -106,7 +106,7 @@ export default function B3MapaSitiosMineros({ data }: B3MapaSitiosMineroProps) {
           fontFamily: 'Roboto Condensed, sans-serif',
         }}
       >
-        Cargando mapa…
+        Loading map…
       </div>
     )
   }
@@ -157,14 +157,10 @@ export default function B3MapaSitiosMineros({ data }: B3MapaSitiosMineroProps) {
                   {feature.properties.site_name}
                 </div>
                 <div style={{ fontSize: '12px', color: '#555', lineHeight: '1.6' }}>
+                  <div><strong>Region:</strong> {feature.properties.state}</div>
+                  <div><strong>Mineral:</strong> {feature.properties.mineral_principal}</div>
                   <div>
-                    <strong>Región:</strong> {feature.properties.state}
-                  </div>
-                  <div>
-                    <strong>Mineral:</strong> {feature.properties.mineral_principal}
-                  </div>
-                  <div>
-                    <strong>Método:</strong>{' '}
+                    <strong>Method:</strong>{' '}
                     {METHOD_LABELS[feature.properties.work_type] || feature.properties.work_type}
                   </div>
                 </div>

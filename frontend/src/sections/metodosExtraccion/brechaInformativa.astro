@@ -17,12 +17,12 @@ const totalKnown = knownMethods.reduce((sum, d) => sum + d.frequency, 0)
   <div class="b1-inner">
     <!-- Section header -->
     <div class="b1-header">
-      <span class="b1-badge">BLOQUE 01 · EXTRACCIÓN</span>
-      <h2 class="b1-title">Métodos de Extracción Minera</h2>
+      <span class="b1-badge">BLOCK 01 · EXTRACTION</span>
+      <h2 class="b1-title">Mining Extraction Methods</h2>
       <p class="b1-subtitle">
-        ¿Qué sabemos realmente sobre cómo se extrae en el Perú? La mayoría de sitios mineros
-        carecen de información sobre su método de extracción. Aquí exploramos tanto la brecha
-        informativa como la distribución de los métodos identificados.
+        What do we actually know about how mining is done in Peru? Most mining sites
+        lack information about their extraction method. Here we explore both the information
+        gap and the distribution of identified methods.
       </p>
     </div>
 
@@ -33,10 +33,9 @@ const totalKnown = knownMethods.reduce((sum, d) => sum + d.frequency, 0)
         <!-- Card: Total -->
         <div class="b1-card b1-card--total">
           <div class="b1-card__number b1-card__number--hero">{totalRegistros}</div>
-          <div class="b1-card__label">Sitios mineros registrados</div>
+          <div class="b1-card__label">Registered mining sites</div>
           <div class="b1-card__desc">
-            Total de registros en la base de datos del sector minero peruano analizados en este
-            estudio.
+            Total records in the Peruvian mining sector database analyzed in this study.
           </div>
         </div>
 
@@ -44,7 +43,7 @@ const totalKnown = knownMethods.reduce((sum, d) => sum + d.frequency, 0)
         <div class="b1-card b1-card--unknown">
           <div class="b1-card__pct">{unknownPct}%</div>
           <div class="b1-card__number">{unknownCount}</div>
-          <div class="b1-card__label">Sin método identificado</div>
+          <div class="b1-card__label">Without identified method</div>
           <div class="b1-card__bar">
             <div
               class="b1-card__bar-fill b1-card__bar-fill--unknown"
@@ -53,8 +52,7 @@ const totalKnown = knownMethods.reduce((sum, d) => sum + d.frequency, 0)
             </div>
           </div>
           <div class="b1-card__desc">
-            Más de tres cuartas partes de los sitios mineros carecen de información sobre su método
-            de extracción.
+            More than three-quarters of mining sites lack information about their extraction method.
           </div>
         </div>
 
@@ -62,7 +60,7 @@ const totalKnown = knownMethods.reduce((sum, d) => sum + d.frequency, 0)
         <div class="b1-card b1-card--known">
           <div class="b1-card__pct">{knownPct}%</div>
           <div class="b1-card__number">{knownCount}</div>
-          <div class="b1-card__label">Con método identificado</div>
+          <div class="b1-card__label">With identified method</div>
           <div class="b1-card__bar">
             <div
               class="b1-card__bar-fill b1-card__bar-fill--known"
@@ -71,8 +69,7 @@ const totalKnown = knownMethods.reduce((sum, d) => sum + d.frequency, 0)
             </div>
           </div>
           <div class="b1-card__desc">
-            Solo una fracción menor cuenta con datos sobre si la operación es subterránea, a tajo
-            abierto o mixta.
+            Only a small fraction has data on whether the operation is underground, open-pit, or mixed.
           </div>
         </div>
       </div>
@@ -87,13 +84,13 @@ const totalKnown = knownMethods.reduce((sum, d) => sum + d.frequency, 0)
     <div class="b1-insight">
       <span class="b1-insight__icon">⚠</span>
       <p class="b1-insight__text">
-        De los <strong>{totalRegistros}</strong> sitios registrados, el
-        <strong>{unknownPct}%</strong> no tiene método de extracción clasificado — una brecha que
-        condiciona todo el análisis. De los
-        <strong>{totalKnown.toLocaleString('es-PE')}</strong> sitios con información disponible, la
-        minería subterránea lidera con amplio margen. Las conclusiones sobre distribución geográfica,
-        relación mineral-método y escala operativa se basan únicamente en ese
-        <strong>{knownPct}%</strong> de registros con datos completos.
+        Of the <strong>{totalRegistros}</strong> registered sites,
+        <strong>{unknownPct}%</strong> have no classified extraction method — a gap that
+        conditions the entire analysis. Of the
+        <strong>{totalKnown.toLocaleString('es-PE')}</strong> sites with available information, underground
+        mining leads by a wide margin. The conclusions about geographic distribution,
+        mineral-method relationship, and operational scale are based solely on that
+        <strong>{knownPct}%</strong> of records with complete data.
       </p>
     </div>
   </div>
