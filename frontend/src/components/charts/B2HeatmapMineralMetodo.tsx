@@ -1,5 +1,6 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import * as echarts from 'echarts'
+import { useInViewChart } from '../../hooks/useInViewChart'
 
 interface B2HeatmapData {
   minerals: string[]
@@ -34,7 +35,7 @@ const MINERAL_LABELS: Record<string, string> = {
 export default function B2HeatmapMineralMetodo({ data }: B2HeatmapMineralMetodoProps) {
   const chartRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
+  useInViewChart(chartRef, () => {
     if (!chartRef.current) return
 
     const chart = echarts.init(chartRef.current)
@@ -157,6 +158,10 @@ export default function B2HeatmapMineralMetodo({ data }: B2HeatmapMineralMetodoP
               borderWidth: 2,
             },
           },
+          animation: true,
+          animationDuration: 1400,
+          animationEasing: 'cubicOut',
+          animationDelay: (idx: number) => idx * 18,
         },
       ],
     }
@@ -170,7 +175,7 @@ export default function B2HeatmapMineralMetodo({ data }: B2HeatmapMineralMetodoP
       window.removeEventListener('resize', handleResize)
       chart.dispose()
     }
-  }, [data])
+  })
 
   return <div ref={chartRef} style={{ width: '100%', height: '480px' }} />
 }

@@ -1,5 +1,6 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import * as echarts from 'echarts'
+import { useInViewChart } from '../../hooks/useInViewChart'
 
 interface MethodData {
   method: string
@@ -28,7 +29,7 @@ const METHOD_LABELS: Record<string, string> = {
 export default function B1DonutMetodos({ data }: B1DonutMetodosProps) {
   const chartRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
+  useInViewChart(chartRef, () => {
     if (!chartRef.current) return
 
     const chart = echarts.init(chartRef.current)
@@ -158,9 +159,9 @@ export default function B1DonutMetodos({ data }: B1DonutMetodosProps) {
               color: METHOD_COLORS[d.method] || '#3d3d3d',
             },
           })),
-          animationType: 'scale',
-          animationEasing: 'elasticOut',
-          animationDuration: 1200,
+          animationType: 'expansion',
+          animationEasing: 'cubicOut',
+          animationDuration: 1400,
         },
       ],
     }
@@ -174,7 +175,7 @@ export default function B1DonutMetodos({ data }: B1DonutMetodosProps) {
       window.removeEventListener('resize', handleResize)
       chart.dispose()
     }
-  }, [data])
+  })
 
   return <div ref={chartRef} style={{ width: '100%', height: '420px' }} />
 }

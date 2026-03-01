@@ -1,6 +1,7 @@
 ---
 import heatmapData from '../../data/B2/bloque_2_heatmap_mineral_metodo.json'
 import B2HeatmapMineralMetodo from '../../components/charts/B2HeatmapMineralMetodo'
+import AnimatedCounter from '../../components/AnimatedCounter'
 ---
 
 <section class="b2h-section w-[80%] mx-auto border-l border-r border-white/20">
@@ -25,13 +26,30 @@ import B2HeatmapMineralMetodo from '../../components/charts/B2HeatmapMineralMeto
     <div class="b2h-insight">
       <span class="b2h-insight__icon">🔍</span>
       <p class="b2h-insight__text">
-        <strong>Iron</strong> (92%) and <strong>Bentonite</strong> (89%) have the highest levels of unknown
-        data. In contrast, <strong>Antimony</strong> has the smallest gap (68%), allowing a more reliable
-        analysis of its distribution by method. In Peru, the high number of mining concessions —many still
-        in early stages such as exploration— partly explains the lack of detailed information on extraction
-        methods. This gap does not imply inactivity, but rather reflects projects undergoing technical
-        development, whose information will consolidate as they advance toward more defined stages of
-        exploitation.
+        <strong>Iron</strong> (<AnimatedCounter
+          client:only="react"
+          value={92}
+          suffix="%"
+          duration={1400}
+          className="b2h-num"
+        />) and <strong>Bentonite</strong> (<AnimatedCounter
+          client:only="react"
+          value={89}
+          suffix="%"
+          duration={1400}
+          className="b2h-num"
+        />) have the highest levels of unknown data. In contrast, <strong>Antimony</strong> has the smallest
+        gap (<AnimatedCounter
+          client:only="react"
+          value={68}
+          suffix="%"
+          duration={1400}
+          className="b2h-num"
+        />), allowing a more reliable analysis of its distribution by method. In Peru, the high
+        number of mining concessions —many still in early stages such as exploration— partly
+        explains the lack of detailed information on extraction methods. This gap does not imply
+        inactivity, but rather reflects projects undergoing technical development, whose information
+        will consolidate as they advance toward more defined stages of exploitation.
       </p>
     </div>
   </div>
@@ -120,5 +138,12 @@ import B2HeatmapMineralMetodo from '../../components/charts/B2HeatmapMineralMeto
 
   .b2h-insight__text strong {
     color: var(--accent-brown-light);
+  }
+
+  .b2h-insight__text :global(.b2h-num) {
+    color: var(--accent-lime-light);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: -0.3px;
   }
 </style>

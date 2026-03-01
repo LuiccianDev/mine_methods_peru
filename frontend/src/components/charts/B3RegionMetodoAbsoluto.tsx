@@ -1,5 +1,6 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import * as echarts from 'echarts'
+import { useInViewChart } from '../../hooks/useInViewChart'
 
 interface RegionAbsolutoItem {
   region: string
@@ -30,7 +31,7 @@ const METHOD_KEYS = ['Underground', 'Surface', 'Surface/Underground']
 export default function B3RegionMetodoAbsoluto({ data }: B3RegionMetodoAbsolutoProps) {
   const chartRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
+  useInViewChart(chartRef, () => {
     if (!chartRef.current) return
 
     const chart = echarts.init(chartRef.current)
@@ -169,7 +170,7 @@ export default function B3RegionMetodoAbsoluto({ data }: B3RegionMetodoAbsolutoP
       window.removeEventListener('resize', handleResize)
       chart.dispose()
     }
-  }, [data])
+  })
 
   return <div ref={chartRef} style={{ width: '100%', height: '520px' }} />
 }

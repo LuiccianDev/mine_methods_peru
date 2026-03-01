@@ -1,6 +1,7 @@
 ---
 import estadoData from '../../data/B5/bloque_5_estado_desarrollo_vs_metodo.json'
 import B5BarDesarrolloMetodo from '../../components/charts/B5BarDesarrolloMetodo'
+import AnimatedCounter from '../../components/AnimatedCounter'
 
 const totalRegistros = estadoData.metadata.total_registros
 ---
@@ -12,9 +13,13 @@ const totalRegistros = estadoData.metadata.total_registros
       <span class="b5a-badge">BLOCK 05 · LIFE CYCLE</span>
       <h2 class="b5a-title">Absolute Distribution: Development Status vs. Method</h2>
       <p class="b5a-subtitle">
-        Absolute frequency of <strong>{totalRegistros.toLocaleString('es-PE')}</strong> records classified
-        by development status and extraction method. This view complements the percentage distribution,
-        revealing the actual weight of each category in terms of volume.
+        Absolute frequency of <AnimatedCounter
+          client:only="react"
+          value={totalRegistros}
+          duration={1800}
+          className="b5a-num"
+        /> records classified by development status and extraction method. This view complements the percentage
+        distribution, revealing the actual weight of each category in terms of volume.
       </p>
     </div>
 
@@ -27,12 +32,30 @@ const totalRegistros = estadoData.metadata.total_registros
     <div class="b5a-insight">
       <span class="b5a-insight__icon">🔍</span>
       <p class="b5a-insight__text">
-        <strong>Past producers</strong> concentrate the highest number of underground mines (<strong
-          >142</strong
-        >), while <strong>occurrences</strong> dominate the total volume with <strong>1,258</strong> records
-        — of which <strong>1,072</strong> have an unknown method. <strong>Active producers</strong> show
-        the most balanced distribution among known methods, with <strong>122</strong> underground,
-        <strong>53</strong> surface, and <strong>19</strong> mixed.
+        <strong>Past producers</strong> concentrate the highest number of underground mines (<AnimatedCounter
+          client:only="react"
+          value={142}
+          duration={1400}
+          className="b5a-num"
+        />), while <strong>occurrences</strong> dominate the total volume with <AnimatedCounter
+          client:only="react"
+          value={1258}
+          duration={1600}
+          className="b5a-num"
+        /> records — of which <AnimatedCounter
+          client:only="react"
+          value={1072}
+          duration={1600}
+          className="b5a-num"
+        /> have an unknown method. <strong>Active producers</strong> show the most balanced distribution
+        among known methods, with <AnimatedCounter
+          client:only="react"
+          value={122}
+          duration={1400}
+          className="b5a-num"
+        /> underground,
+        <AnimatedCounter client:only="react" value={53} duration={1400} className="b5a-num" /> surface,
+        and <AnimatedCounter client:only="react" value={19} duration={1400} className="b5a-num" /> mixed.
       </p>
     </div>
   </div>
@@ -87,6 +110,14 @@ const totalRegistros = estadoData.metadata.total_registros
 
   .b5a-subtitle strong {
     color: var(--accent-lime-light);
+  }
+
+  .b5a-subtitle :global(.b5a-num),
+  .b5a-insight__text :global(.b5a-num) {
+    color: var(--accent-lime-light);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: -0.3px;
   }
 
   /* Chart wrapper */

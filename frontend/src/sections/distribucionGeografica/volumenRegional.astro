@@ -1,6 +1,7 @@
 ---
 import absoluteData from '../../data/B3/bloque_3_region_metodo_absoluto.json'
 import B3RegionMetodoAbsoluto from '../../components/charts/B3RegionMetodoAbsoluto'
+import AnimatedCounter from '../../components/AnimatedCounter'
 
 const totalSites = absoluteData.reduce((sum: number, d: any) => sum + d.total_known_sites, 0)
 const topRegion = absoluteData.reduce(
@@ -19,7 +20,12 @@ const topRegion = absoluteData.reduce(
         Real count of mining sites by method in each region. Percentages can be misleading when
         sample size varies drastically —
         <strong>{topRegion.region}</strong> has
-        <strong>{topRegion.total_known_sites}</strong> sites, while other regions have fewer than 5.
+        <AnimatedCounter
+          client:only="react"
+          value={topRegion.total_known_sites}
+          duration={1600}
+          className="b3a-num"
+        /> sites, while other regions have fewer than 5.
       </p>
     </div>
 
@@ -32,9 +38,39 @@ const topRegion = absoluteData.reduce(
     <div class="b3a-insight">
       <span class="b3a-insight__icon">🔍</span>
       <p class="b3a-insight__text">
-        <strong>Puno</strong> leads with 110 sites (78 underground), followed by
-        <strong>Arequipa</strong> (82 sites, 68 underground) and <strong>Lima</strong> (73 sites). These
-        three regions account for <strong>38%</strong> of all sites with a known method nationwide.
+        <strong>Puno</strong> leads with <AnimatedCounter
+          client:only="react"
+          value={110}
+          duration={1400}
+          className="b3a-num"
+        /> sites (<AnimatedCounter
+          client:only="react"
+          value={78}
+          duration={1400}
+          className="b3a-num"
+        /> underground), followed by
+        <strong>Arequipa</strong> (<AnimatedCounter
+          client:only="react"
+          value={82}
+          duration={1400}
+          className="b3a-num"
+        /> sites, <AnimatedCounter
+          client:only="react"
+          value={68}
+          duration={1400}
+          className="b3a-num"
+        /> underground) and <strong>Lima</strong> (<AnimatedCounter
+          client:only="react"
+          value={73}
+          duration={1400}
+          className="b3a-num"
+        /> sites). These three regions account for <AnimatedCounter
+          client:only="react"
+          value={38}
+          suffix="%"
+          duration={1400}
+          className="b3a-num"
+        /> of all sites with a known method nationwide.
       </p>
     </div>
   </div>
@@ -89,6 +125,14 @@ const topRegion = absoluteData.reduce(
 
   .b3a-subtitle strong {
     color: var(--accent-lime-light);
+  }
+
+  .b3a-subtitle :global(.b3a-num),
+  .b3a-insight__text :global(.b3a-num) {
+    color: var(--accent-lime-light);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: -0.3px;
   }
 
   /* Chart wrapper */

@@ -1,5 +1,6 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import * as echarts from 'echarts'
+import { useInViewChart } from '../../hooks/useInViewChart'
 
 interface B2StackedData {
   minerals: string[]
@@ -41,7 +42,7 @@ const MINERAL_LABELS: Record<string, string> = {
 export default function B2StackedMineralMetodo({ data }: B2StackedMineralMetodoProps) {
   const chartRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
+  useInViewChart(chartRef, () => {
     if (!chartRef.current) return
 
     const chart = echarts.init(chartRef.current)
@@ -181,7 +182,7 @@ export default function B2StackedMineralMetodo({ data }: B2StackedMineralMetodoP
       window.removeEventListener('resize', handleResize)
       chart.dispose()
     }
-  }, [data])
+  })
 
   return <div ref={chartRef} style={{ width: '100%', height: '480px' }} />
 }

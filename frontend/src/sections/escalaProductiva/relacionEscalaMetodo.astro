@@ -1,6 +1,7 @@
 ---
 import graficaData from '../../data/B4/bloque_4_metodo_vs_escala_grafica.json'
 import B4StackedMetodoEscala from '../../components/charts/B4StackedMetodoEscala'
+import AnimatedCounter from '../../components/AnimatedCounter'
 
 const totalRegistros = graficaData.metadata.total_registros
 ---
@@ -12,9 +13,13 @@ const totalRegistros = graficaData.metadata.total_registros
       <span class="b4e-badge">BLOCK 04 · PRODUCTION SCALE</span>
       <h2 class="b4e-title">Extraction Method vs. Production Scale</h2>
       <p class="b4e-subtitle">
-        Absolute distribution of <strong>{totalRegistros.toLocaleString('es-PE')}</strong> records by
-        extraction method and production scale. Records with unknown scale are excluded to show the actual
-        relationship between mining type and operation size.
+        Absolute distribution of <AnimatedCounter
+          client:only="react"
+          value={totalRegistros}
+          duration={1800}
+          className="b4e-num"
+        /> records by extraction method and production scale. Records with unknown scale are excluded
+        to show the actual relationship between mining type and operation size.
       </p>
     </div>
 
@@ -27,11 +32,26 @@ const totalRegistros = graficaData.metadata.total_registros
     <div class="b4e-insight">
       <span class="b4e-insight__icon">🔍</span>
       <p class="b4e-insight__text">
-        <strong>Underground</strong> mining dominates both at small scale (<strong>167</strong> sites)
-        and large scale (<strong>143</strong>), reflecting its operational versatility in Peru. In
-        contrast, <strong>surface</strong> mining has the highest proportion of records
-        <strong>with no scale data</strong> (25.9%), suggesting a particularly acute information gap for
-        open-pit operations.
+        <strong>Underground</strong> mining dominates both at small scale (<AnimatedCounter
+          client:only="react"
+          value={167}
+          duration={1400}
+          className="b4e-num"
+        /> sites) and large scale (<AnimatedCounter
+          client:only="react"
+          value={143}
+          duration={1400}
+          className="b4e-num"
+        />), reflecting its operational versatility in Peru. In contrast, <strong>surface</strong> mining
+        has the highest proportion of records
+        <strong>with no scale data</strong> (<AnimatedCounter
+          client:only="react"
+          value={25.9}
+          decimals={1}
+          suffix="%"
+          duration={1400}
+          className="b4e-num"
+        />), suggesting a particularly acute information gap for open-pit operations.
       </p>
     </div>
   </div>
@@ -86,6 +106,14 @@ const totalRegistros = graficaData.metadata.total_registros
 
   .b4e-subtitle strong {
     color: var(--accent-lime-light);
+  }
+
+  .b4e-subtitle :global(.b4e-num),
+  .b4e-insight__text :global(.b4e-num) {
+    color: var(--accent-lime-light);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: -0.3px;
   }
 
   /* Chart wrapper */

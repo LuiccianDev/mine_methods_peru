@@ -1,5 +1,6 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import * as echarts from 'echarts'
+import { useInViewChart } from '../../hooks/useInViewChart'
 
 interface B5DatosItem {
   dev_stat_label: string
@@ -50,7 +51,7 @@ const METHOD_KEYS = ['Underground', 'Surface', 'Surface/Underground', 'Unknown']
 export default function B5BarDesarrolloMetodo({ data }: B5BarDesarrolloMetodoProps) {
   const chartRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
+  useInViewChart(chartRef, () => {
     if (!chartRef.current) return
 
     const chart = echarts.init(chartRef.current)
@@ -194,7 +195,7 @@ export default function B5BarDesarrolloMetodo({ data }: B5BarDesarrolloMetodoPro
       window.removeEventListener('resize', handleResize)
       chart.dispose()
     }
-  }, [data])
+  })
 
   return <div ref={chartRef} style={{ width: '100%', height: '420px' }} />
 }

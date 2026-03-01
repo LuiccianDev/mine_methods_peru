@@ -1,5 +1,6 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import * as echarts from 'echarts'
+import { useInViewChart } from '../../hooks/useInViewChart'
 
 interface B4FreqItem {
   method: string
@@ -49,7 +50,7 @@ const SCALE_KEYS = ['Grande', 'Mediano', 'Pequeño', 'Sin dato'] as const
 export default function B4StackedMetodoEscala({ data }: B4StackedMetodoEscalaProps) {
   const chartRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
+  useInViewChart(chartRef, () => {
     if (!chartRef.current) return
 
     const chart = echarts.init(chartRef.current)
@@ -193,7 +194,7 @@ export default function B4StackedMetodoEscala({ data }: B4StackedMetodoEscalaPro
       window.removeEventListener('resize', handleResize)
       chart.dispose()
     }
-  }, [data])
+  })
 
   return <div ref={chartRef} style={{ width: '100%', height: '420px' }} />
 }

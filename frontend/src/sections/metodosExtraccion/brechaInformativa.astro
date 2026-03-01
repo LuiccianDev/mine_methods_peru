@@ -2,6 +2,7 @@
 import brechaData from '../../data/B1/bloque_1_brecha_informativa.json'
 import metodosData from '../../data/B1/bloque_1_metodos_extraccion.json'
 import B1DonutMetodos from '../../components/charts/B1DonutMetodos'
+import AnimatedCounter from '../../components/AnimatedCounter'
 
 const totalRegistros = brechaData.total_registros.toLocaleString('es-PE')
 const unknownCount = brechaData.unknown_count.toLocaleString('es-PE')
@@ -32,7 +33,13 @@ const totalKnown = knownMethods.reduce((sum, d) => sum + d.frequency, 0)
       <div class="b1-cards">
         <!-- Card: Total -->
         <div class="b1-card b1-card--total">
-          <div class="b1-card__number b1-card__number--hero">{totalRegistros}</div>
+          <div class="b1-card__number b1-card__number--hero">
+            <AnimatedCounter
+              client:only="react"
+              value={brechaData.total_registros}
+              duration={2000}
+            />
+          </div>
           <div class="b1-card__label">Registered mining sites</div>
           <div class="b1-card__desc">
             Total records in the Peruvian mining sector database analyzed in this study.
@@ -41,8 +48,18 @@ const totalKnown = knownMethods.reduce((sum, d) => sum + d.frequency, 0)
 
         <!-- Card: Desconocido -->
         <div class="b1-card b1-card--unknown">
-          <div class="b1-card__pct">{unknownPct}%</div>
-          <div class="b1-card__number">{unknownCount}</div>
+          <div class="b1-card__pct">
+            <AnimatedCounter
+              client:only="react"
+              value={unknownPct}
+              decimals={1}
+              suffix="%"
+              duration={1600}
+            />
+          </div>
+          <div class="b1-card__number">
+            <AnimatedCounter client:only="react" value={brechaData.unknown_count} duration={1800} />
+          </div>
           <div class="b1-card__label">Without identified method</div>
           <div class="b1-card__bar">
             <div
@@ -58,8 +75,18 @@ const totalKnown = knownMethods.reduce((sum, d) => sum + d.frequency, 0)
 
         <!-- Card: Conocido -->
         <div class="b1-card b1-card--known">
-          <div class="b1-card__pct">{knownPct}%</div>
-          <div class="b1-card__number">{knownCount}</div>
+          <div class="b1-card__pct">
+            <AnimatedCounter
+              client:only="react"
+              value={knownPct}
+              decimals={1}
+              suffix="%"
+              duration={1600}
+            />
+          </div>
+          <div class="b1-card__number">
+            <AnimatedCounter client:only="react" value={brechaData.known_count} duration={1800} />
+          </div>
           <div class="b1-card__label">With identified method</div>
           <div class="b1-card__bar">
             <div class="b1-card__bar-fill b1-card__bar-fill--known" style={`width: ${knownPct}%`}>
@@ -82,13 +109,34 @@ const totalKnown = knownMethods.reduce((sum, d) => sum + d.frequency, 0)
     <div class="b1-insight">
       <span class="b1-insight__icon">⚠</span>
       <p class="b1-insight__text">
-        Of the <strong>{totalRegistros}</strong> registered sites,
-        <strong>{unknownPct}%</strong> have no classified extraction method — a gap that conditions the
-        entire analysis. Of the
-        <strong>{totalKnown.toLocaleString('es-PE')}</strong> sites with available information, underground
-        mining leads by a wide margin. The conclusions about geographic distribution, mineral-method relationship,
-        and operational scale are based solely on that
-        <strong>{knownPct}%</strong> of records with complete data.
+        Of the <strong
+          ><AnimatedCounter
+            client:only="react"
+            value={brechaData.total_registros}
+            duration={2000}
+          /></strong
+        > registered sites,
+        <strong
+          ><AnimatedCounter
+            client:only="react"
+            value={unknownPct}
+            decimals={1}
+            suffix="%"
+            duration={1600}
+          /></strong
+        > have no classified extraction method — a gap that conditions the entire analysis. Of the
+        <strong><AnimatedCounter client:only="react" value={totalKnown} duration={1800} /></strong> sites
+        with available information, underground mining leads by a wide margin. The conclusions about geographic
+        distribution, mineral-method relationship, and operational scale are based solely on that
+        <strong
+          ><AnimatedCounter
+            client:only="react"
+            value={knownPct}
+            decimals={1}
+            suffix="%"
+            duration={1600}
+          /></strong
+        > of records with complete data.
       </p>
     </div>
   </div>

@@ -1,6 +1,7 @@
 ---
 import stackedData from '../../data/B2/bloque_2_stacked_mineral_metodo_known.json'
 import B2StackedMineralMetodo from '../../components/charts/B2StackedMineralMetodo'
+import AnimatedCounter from '../../components/AnimatedCounter'
 
 const totalKnown = stackedData.total_known_records_top10
 ---
@@ -13,8 +14,13 @@ const totalKnown = stackedData.total_known_records_top10
       <h2 class="b2s-title">Actual Composition by Mineral</h2>
       <p class="b2s-subtitle">
         Percentage distribution of extraction methods among the
-        <strong>{totalKnown.toLocaleString('es-PE')}</strong> records with an identified method. Excludes
-        unknown data to reveal the actual composition for each mineral.
+        <AnimatedCounter
+          client:only="react"
+          value={totalKnown}
+          duration={1600}
+          className="b2s-num"
+        /> records with an identified method. Excludes unknown data to reveal the actual composition for
+        each mineral.
       </p>
     </div>
 
@@ -27,13 +33,30 @@ const totalKnown = stackedData.total_known_records_top10
     <div class="b2s-insight">
       <span class="b2s-insight__icon">🔍</span>
       <p class="b2s-insight__text">
-        <strong>Gold</strong> (84%) and <strong>Lead</strong> (78%) show a marked predominance of underground
-        extraction, reflecting their frequent occurrence in deep veins or geological structures that require
-        subsurface operations. In contrast, <strong>Limestone</strong> is exploited almost exclusively
-        through surface mining (91%), consistent with its formation in large volumes near the surface
-        and its exploitation in open quarries. This behavior confirms that the type of mineralization
-        directly determines the extraction method applied, revealing a clear technical relationship between
-        geological characteristics and operational strategy.
+        <strong>Gold</strong> (<AnimatedCounter
+          client:only="react"
+          value={84}
+          suffix="%"
+          duration={1400}
+          className="b2s-num"
+        />) and <strong>Lead</strong> (<AnimatedCounter
+          client:only="react"
+          value={78}
+          suffix="%"
+          duration={1400}
+          className="b2s-num"
+        />) show a marked predominance of underground extraction, reflecting their frequent
+        occurrence in deep veins or geological structures that require subsurface operations. In
+        contrast, <strong>Limestone</strong> is exploited almost exclusively through surface mining (<AnimatedCounter
+          client:only="react"
+          value={91}
+          suffix="%"
+          duration={1400}
+          className="b2s-num"
+        />), consistent with its formation in large volumes near the surface and its exploitation in
+        open quarries. This behavior confirms that the type of mineralization directly determines
+        the extraction method applied, revealing a clear technical relationship between geological
+        characteristics and operational strategy.
       </p>
     </div>
   </div>
@@ -88,6 +111,14 @@ const totalKnown = stackedData.total_known_records_top10
 
   .b2s-subtitle strong {
     color: var(--accent-lime-light);
+  }
+
+  .b2s-subtitle :global(.b2s-num),
+  .b2s-insight__text :global(.b2s-num) {
+    color: var(--accent-lime-light);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: -0.3px;
   }
 
   /* Chart wrapper */

@@ -1,6 +1,7 @@
 ---
 import geojsonData from '../../data/B3/bloque_3_sitios_mineros_muestra.geojson'
 import B3MapaSitiosMineros from '../../components/maps/B3MapaSitiosMineros'
+import AnimatedCounter from '../../components/AnimatedCounter'
 
 const totalSites = geojsonData.features.length
 const uniqueRegions = [...new Set(geojsonData.features.map((f: any) => f.properties.state))].length
@@ -13,9 +14,18 @@ const uniqueRegions = [...new Set(geojsonData.features.map((f: any) => f.propert
       <span class="b3m-badge">BLOCK 03 · EXPLORATORY MAP</span>
       <h2 class="b3m-title">Mining Sites of Peru</h2>
       <p class="b3m-subtitle">
-        Interactive map with a sample of <strong>{totalSites}</strong> mining sites distributed across
-        <strong>{uniqueRegions}</strong> regions. Each point is color-coded by its extraction method —
-        click to view the site's details.
+        Interactive map with a sample of <AnimatedCounter
+          client:only="react"
+          value={totalSites}
+          duration={1600}
+          className="b3m-num"
+        /> mining sites distributed across
+        <AnimatedCounter
+          client:only="react"
+          value={uniqueRegions}
+          duration={1400}
+          className="b3m-num"
+        /> regions. Each point is color-coded by its extraction method — click to view the site's details.
       </p>
     </div>
 
@@ -87,6 +97,14 @@ const uniqueRegions = [...new Set(geojsonData.features.map((f: any) => f.propert
 
   .b3m-subtitle strong {
     color: var(--accent-lime-light);
+  }
+
+  .b3m-subtitle :global(.b3m-num),
+  .b3m-insight__text :global(.b3m-num) {
+    color: var(--accent-lime-light);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: -0.3px;
   }
 
   /* Map wrapper */
