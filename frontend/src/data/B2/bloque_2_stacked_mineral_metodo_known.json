@@ -1,40 +1,84 @@
 {
-  "minerals": [
-    "Limestone",
-    "Iron",
-    "Bentonite",
-    "Antimony",
-    "Copper",
-    "Silver",
-    "Zinc",
-    "Lead",
-    "Desconocido",
-    "Gold"
-  ],
-  "methods": ["Underground", "Surface", "Surface/Underground"],
-  "values": [
-    [9.09, 90.91, 0.0],
-    [25.0, 50.0, 25.0],
-    [40.0, 60.0, 0.0],
-    [55.56, 16.67, 27.78],
-    [66.67, 21.43, 11.9],
-    [73.43, 13.29, 13.29],
-    [78.0, 10.0, 12.0],
-    [78.41, 12.5, 9.09],
-    [81.82, 15.15, 3.03],
-    [84.31, 11.76, 3.92]
-  ],
-  "sample_size_per_mineral": {
-    "Limestone": 11,
-    "Iron": 4,
-    "Bentonite": 5,
-    "Antimony": 18,
-    "Copper": 210,
-    "Silver": 143,
-    "Zinc": 50,
-    "Lead": 88,
-    "Desconocido": 33,
-    "Gold": 51
-  },
-  "total_known_records_top10": 613
+    "minerals": [
+        "Limestone",
+        "Iron",
+        "Bentonite",
+        "Antimony",
+        "Copper",
+        "Silver",
+        "Zinc",
+        "Lead",
+        "Desconocido",
+        "Gold"
+    ],
+    "methods": [
+        "Underground",
+        "Surface",
+        "Surface/Underground"
+    ],
+    "values": [
+        [
+            9.09,
+            90.91,
+            0.0
+        ],
+        [
+            25.0,
+            50.0,
+            25.0
+        ],
+        [
+            40.0,
+            60.0,
+            0.0
+        ],
+        [
+            55.56,
+            16.67,
+            27.78
+        ],
+        [
+            66.67,
+            21.43,
+            11.9
+        ],
+        [
+            73.43,
+            13.29,
+            13.29
+        ],
+        [
+            78.0,
+            10.0,
+            12.0
+        ],
+        [
+            78.41,
+            12.5,
+            9.09
+        ],
+        [
+            81.82,
+            15.15,
+            3.03
+        ],
+        [
+            84.31,
+            11.76,
+            3.92
+        ]
+    ],
+    "sample_size_per_mineral": {
+        "Limestone": 11,
+        "Iron": 4,
+        "Bentonite": 5,
+        "Antimony": 18,
+        "Copper": 210,
+        "Silver": 143,
+        "Zinc": 50,
+        "Lead": 88,
+        "Desconocido": 33,
+        "Gold": 51
+    },
+    "total_known_records_top10": 613
 }

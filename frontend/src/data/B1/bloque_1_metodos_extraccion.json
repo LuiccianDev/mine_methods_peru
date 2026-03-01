@@ -1,22 +1,22 @@
 [
-  {
-    "method": "Underground",
-    "frequency": 456,
-    "percentage": 14.9
-  },
-  {
-    "method": "Surface",
-    "frequency": 159,
-    "percentage": 5.2
-  },
-  {
-    "method": "Surface/Underground",
-    "frequency": 74,
-    "percentage": 2.4
-  },
-  {
-    "method": "Unknown",
-    "frequency": 2366,
-    "percentage": 77.4
-  }
+    {
+        "method": "Underground",
+        "frequency": 456,
+        "percentage": 14.9
+    },
+    {
+        "method": "Surface",
+        "frequency": 159,
+        "percentage": 5.2
+    },
+    {
+        "method": "Surface/Underground",
+        "frequency": 74,
+        "percentage": 2.4
+    },
+    {
+        "method": "Unknown",
+        "frequency": 2366,
+        "percentage": 77.4
+    }
 ]

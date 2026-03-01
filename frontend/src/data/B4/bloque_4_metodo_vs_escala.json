@@ -1,47 +1,47 @@
 {
-  "metadata": {
-    "analysis": "Metodo vs Escala productiva",
-    "total_registros": 557,
-    "exclusion": "Escala 'Desconocido'"
-  },
-  "tabla_absoluta": {
-    "Underground": {
-      "Grande": 143,
-      "Mediano": 24,
-      "Pequeño": 167,
-      "Sin dato": 43
+    "metadata": {
+        "analysis": "Metodo vs Escala productiva",
+        "total_registros": 557,
+        "exclusion": "Escala 'Desconocido'"
     },
-    "Surface": {
-      "Grande": 26,
-      "Mediano": 1,
-      "Pequeño": 59,
-      "Sin dato": 30
+    "tabla_absoluta": {
+        "Underground": {
+            "Grande": 143,
+            "Mediano": 24,
+            "Pequeño": 167,
+            "Sin dato": 43
+        },
+        "Surface": {
+            "Grande": 26,
+            "Mediano": 1,
+            "Pequeño": 59,
+            "Sin dato": 30
+        },
+        "Surface/Underground": {
+            "Grande": 24,
+            "Mediano": 3,
+            "Pequeño": 32,
+            "Sin dato": 5
+        }
     },
-    "Surface/Underground": {
-      "Grande": 24,
-      "Mediano": 3,
-      "Pequeño": 32,
-      "Sin dato": 5
+    "tabla_porcentual": {
+        "Underground": {
+            "Grande": 37.93,
+            "Mediano": 6.37,
+            "Pequeño": 44.3,
+            "Sin dato": 11.41
+        },
+        "Surface": {
+            "Grande": 22.41,
+            "Mediano": 0.86,
+            "Pequeño": 50.86,
+            "Sin dato": 25.86
+        },
+        "Surface/Underground": {
+            "Grande": 37.5,
+            "Mediano": 4.69,
+            "Pequeño": 50.0,
+            "Sin dato": 7.81
+        }
     }
-  },
-  "tabla_porcentual": {
-    "Underground": {
-      "Grande": 37.93,
-      "Mediano": 6.37,
-      "Pequeño": 44.3,
-      "Sin dato": 11.41
-    },
-    "Surface": {
-      "Grande": 22.41,
-      "Mediano": 0.86,
-      "Pequeño": 50.86,
-      "Sin dato": 25.86
-    },
-    "Surface/Underground": {
-      "Grande": 37.5,
-      "Mediano": 4.69,
-      "Pequeño": 50.0,
-      "Sin dato": 7.81
-    }
-  }
 }
