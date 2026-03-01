@@ -2,10 +2,12 @@
 import Layout from '../layouts/Layout.astro'
 import Image from 'astro/components/Image.astro'
 import imagen_hero from '../assets/background_site.png'
+import TimelineBar from '../components/TimelineBar.astro'
 ---
 
 <Layout>
-  <section class="relative min-h-[95vh] flex flex-col">
+    <TimelineBar />
+  <section class="relative min-h-[85vh] flex flex-col">
     <div
       class="relative z-10 flex-1 flex items-center justify-center w-[80%] mx-auto border-l border-r border-white/20 bg-black"
     >
@@ -45,4 +47,5 @@ import imagen_hero from '../assets/background_site.png'
       </div>
     </div>
   </section>
+  
 </Layout>
