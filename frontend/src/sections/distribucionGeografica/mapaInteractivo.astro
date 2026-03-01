@@ -6,7 +6,7 @@ const totalSites = geojsonData.features.length
 const uniqueRegions = [...new Set(geojsonData.features.map((f: any) => f.properties.state))].length
 ---
 
-<section class="b3m-section w-[80%] mx-auto border-l border-r border-b border-white/20">
+<section id="map" class="b3m-section w-[80%] mx-auto border-l border-r border-b border-white/20">
   <div class="b3m-inner">
     <!-- Section header -->
     <div class="b3m-header">
