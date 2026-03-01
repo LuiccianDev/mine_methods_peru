@@ -1,8 +1,9 @@
-# Métodos de Extracción Minera en el Perú
 
-**Análisis territorial y visualización interactiva de los patrones mineros peruanos**
+# Mining Extraction Methods in Peru
 
-> _¿Qué método de extracción domina en el Perú según el tipo de mineral y la región, y cómo se relaciona con la escala productiva y el estado de desarrollo?_
+**Territorial analysis and interactive visualization of Peruvian mining patterns**
+
+> _Which extraction method dominates in Peru according to mineral type and region, and how does it relate to productive scale and development status?_
 
 [![Astro](https://img.shields.io/badge/Astro-5-ff5d01?logo=astro&logoColor=white)](https://astro.build)
 [![React](https://img.shields.io/badge/React-19-61dafb?logo=react&logoColor=white)](https://react.dev)
@@ -13,68 +14,68 @@
 
 ---
 
-## Sobre el Proyecto
+## About the Project
 
-Este proyecto aborda una **pregunta central de Data Science** sobre la minería en el Perú, combinando análisis exploratorio de datos con una presentación visual interactiva tipo _scrollytelling_.
+This project addresses a **central Data Science question** about mining in Peru, combining exploratory data analysis with an interactive, scrollytelling-style visual presentation.
 
-A partir de un dataset de **3,057 sitios mineros** peruanos (extraído de [Mineral Ores Around the World — Kaggle](https://www.kaggle.com/datasets/ramjasmaurya/mineral-ores-around-the-world/data)), se construye un pipeline completo:
+Based on a dataset of **3,057 Peruvian mining sites** (from [Mineral Ores Around the World — Kaggle](https://www.kaggle.com/datasets/ramjasmaurya/mineral-ores-around-the-world/data)), a complete pipeline is built:
 
 ```
-CSV crudo → Limpieza (Python/Pandas) → Análisis exploratorio → Exportación JSON → Dashboard interactivo (Astro + React + ECharts)
+Raw CSV → Cleaning (Python/Pandas) → Exploratory analysis → JSON export → Interactive dashboard (Astro + React + ECharts)
 ```
 
-El resultado es un **dashboard estático de alto rendimiento** con gráficas interactivas, mapas y narrativa visual que responde a la pregunta principal a través de 5 bloques analíticos.
+The result is a **high-performance static dashboard** with interactive charts, maps, and visual storytelling that answers the main question through 5 analytical blocks.
 
 ---
 
-## Bloques de Análisis
+## Analysis Blocks
 
-| Bloque | Pregunta | Visualizaciones |
-|--------|----------|-----------------|
-| **01 — Diagnóstico Nacional** | ¿Cuál es el método predominante? | Donut chart de métodos + cards de brecha informativa |
-| **02 — Mineral × Método** | ¿La minería subterránea se concentra en minerales específicos? | Heatmap de correlación + Stacked bar por mineral |
-| **03 — Distribución Territorial** | ¿Existen regiones donde un método domina? | Bar chart regional + Mapa Leaflet interactivo |
-| **04 — Escala Productiva** | ¿El método se asocia con el tamaño de producción? | Stacked bar método vs escala |
-| **05 — Ciclo de Vida** | ¿Los proyectos en producción tienen menor ambigüedad? | Bar chart estado de desarrollo vs método |
+| Block | Question | Visualizations |
+|-------|----------|----------------|
+| **01 — National Diagnosis** | What is the predominant method? | Donut chart of methods + information gap cards |
+| **02 — Mineral × Method** | Is underground mining concentrated in specific minerals? | Correlation heatmap + stacked bar by mineral |
+| **03 — Territorial Distribution** | Are there regions where one method dominates? | Regional bar chart + interactive Leaflet map |
+| **04 — Productive Scale** | Is the method associated with production size? | Stacked bar method vs scale |
+| **05 — Life Cycle** | Do projects in production have less ambiguity? | Bar chart development status vs method |
 
-### 🎯 Hallazgos Clave
+### 🎯 Key Findings
 
-- **Minería subterránea domina** entre los sitios con método registrado (~tradición andina de vetas polimetálicas)
-- **El mineral condiciona el método** — Zn, Pb, Ag, Au → Underground; Cu → Surface (depósitos porfídicos)
-- **Patrones territoriales claros** — Andes centrales (Junín, Pasco, Ancash) son predominantemente subterráneos; el sur (Arequipa, Cusco) muestra más diversificación
-- **La escala influye** — Surface tiende a mayor escala; Underground a operaciones pequeñas/medianas
-- **La madurez reduce ambigüedad** — Producers tienen método definido; Prospects/Occurrences tienen mayor proporción Unknown
-- **Brecha informativa crítica** — ~76% de los sitios carecen de método de extracción registrado
+- **Underground mining dominates** among sites with registered method (~Andean tradition of polymetallic veins)
+- **Mineral determines method** — Zn, Pb, Ag, Au → Underground; Cu → Surface (porphyry deposits)
+- **Clear territorial patterns** — Central Andes (Junín, Pasco, Ancash) are predominantly underground; the south (Arequipa, Cusco) shows more diversification
+- **Scale matters** — Surface tends to larger scale; Underground to small/medium operations
+- **Maturity reduces ambiguity** — Producers have defined method; Prospects/Occurrences have higher proportion Unknown
+- **Critical information gap** — ~76% of sites lack registered extraction method
 
 ---
 
-## 🏗️ Arquitectura del Proyecto
+## 🏗️ Project Architecture
 
 ```text
 mine_methods_peru/
 │
-├── analysis/                    # 🐍 Pipeline de Data Science
+├── analysis/                    # 🐍 Data Science pipeline
 │   ├── Data/
-│   │   └── df_peru_cleaned.csv  # Dataset limpio (3,057 registros)
+│   │   └── df_peru_cleaned.csv  # Clean dataset (3,057 records)
 │   ├── Docs/
-│   │   ├── DATASET_INFO.md      # Diccionario de datos
-│   │   └── GUIA_PLAN.md         # Plan analítico
+│   │   ├── DATASET_INFO.md      # Data dictionary
+│   │   └── GUIA_PLAN.md         # Analytical plan
 │   ├── script/
-│   │   ├── clean_data.ipynb     # Notebook de limpieza
-│   │   └── analisis_mineria_peru.ipynb  # Análisis exploratorio + exportación
-│   └── pyproject.toml           # Dependencias Python (uv)
+│   │   ├── clean_data.ipynb     # Cleaning notebook
+│   │   └── analisis_mineria_peru.ipynb  # Exploratory analysis + export
+│   └── pyproject.toml           # Python dependencies (uv)
 │
-├── frontend/                    # 🚀 Dashboard interactivo
+├── frontend/                    # 🚀 Interactive dashboard
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── charts/          # Componentes ECharts (6 gráficas)
-│   │   │   └── maps/            # Componente Leaflet (mapa interactivo)
-│   │   ├── sections/            # Secciones narrativas (.astro)
-│   │   ├── data/                # JSON exportados desde Python
-│   │   ├── layouts/             # Layout principal
-│   │   ├── pages/               # Rutas (index.astro)
-│   │   └── styles/              # CSS global + Tailwind
-│   ├── public/fonts/            # Tipografía Roboto Condensed
+│   │   │   ├── charts/          # ECharts components (6 charts)
+│   │   │   └── maps/            # Leaflet component (interactive map)
+│   │   ├── sections/            # Narrative sections (.astro)
+│   │   ├── data/                # JSON exported from Python
+│   │   ├── layouts/             # Main layout
+│   │   ├── pages/               # Routes (index.astro)
+│   │   └── styles/              # Global CSS + Tailwind
+│   ├── public/fonts/            # Roboto Condensed font
 │   ├── astro.config.mjs
 │   ├── package.json
 │   └── tsconfig.json
@@ -88,195 +89,195 @@ mine_methods_peru/
 
 ### Data Science (analysis/)
 
-| Herramienta | Uso |
-
-| **Python 3.12** | Lenguaje principal del análisis |
-| **pandas** | Manipulación y limpieza de datos |
-| **NumPy** | Operaciones numéricas |
-| **Matplotlib + Seaborn** | Visualización exploratoria |
-| **Plotly** | Gráficas interactivas en notebooks |
-| **Jupyter Notebook** | Entorno de análisis |
-| **uv** | Gestor de paquetes y entornos |
+| Tool | Use |
+|------|-----|
+| **Python 3.12** | Main analysis language |
+| **pandas** | Data manipulation and cleaning |
+| **NumPy** | Numerical operations |
+| **Matplotlib + Seaborn** | Exploratory visualization |
+| **Plotly** | Interactive charts in notebooks |
+| **Jupyter Notebook** | Analysis environment |
+| **uv** | Package and environment manager |
 
 ### Frontend (frontend/)
 
-| Herramienta | Uso |
+| Tool | Use |
+|------|-----|
+| **Astro 5** | SSG framework (Static Site Generation) |
+| **React 19** | Interactive components (islands architecture) |
+| **ECharts 6** | High-performance interactive charts |
+| **Leaflet + React-Leaflet 5** | Interactive map of mining sites |
+| **Tailwind CSS 4** | Utility-first design system |
+| **TypeScript** | Strict typing throughout frontend |
+| **pnpm** | Package manager |
 
-| **Astro 5** | Framework SSG (Static Site Generation) |
-| **React 19** | Componentes interactivos (islands architecture) |
-| **ECharts 6** | Gráficas interactivas de alto rendimiento |
-| **Leaflet + React-Leaflet 5** | Mapa interactivo de sitios mineros |
-| **Tailwind CSS 4** | Sistema de diseño utility-first |
-| **TypeScript** | Tipado estricto en todo el frontend |
-| **pnpm** | Gestor de paquetes |
+### Visual Design
 
-### Diseño Visual
-
-- **Tema oscuro exclusivo** — fondo `#000000` / `#0a0a0a`, acentos lima `#c1d65b` y marrón `#846248`
-- **Glassmorphism** — cards con `backdrop-filter: blur()` y fondos semitransparentes
-- **Tipografía** — Roboto Condensed
-- **Scrollytelling** — narrativa visual con secciones temáticas secuenciales
+- **Exclusive dark theme** — background `#000000` / `#0a0a0a`, lime accents `#c1d65b` and brown `#846248`
+- **Glassmorphism** — cards with `backdrop-filter: blur()` and semi-transparent backgrounds
+- **Typography** — Roboto Condensed
+- **Scrollytelling** — visual narrative with sequential thematic sections
 
 ---
 
 ## 📊 Dataset
 
-| Campo | Descripción |
+| Field | Description |
+|-------|-------------|
+| `site_name` | Mining site name |
+| `latitude` / `longitude` | Geographic coordinates |
+| `state` | Region/department of Peru |
+| `commod1` | Main mineral or group of minerals |
+| `work_type` | Extraction method (Surface, Underground, Surface/Underground, Unknown) |
+| `prod_size` | Productive scale (S: small, M: medium, Y: large, U: unknown) |
+| `dev_stat` | Development status (Producer, Past Producer, Prospect, Occurrence, etc.) |
+| `ore` | Main extracted mineral |
 
-| `site_name` | Nombre del sitio minero |
-| `latitude` / `longitude` | Coordenadas geográficas |
-| `state` | Región/departamento del Perú |
-| `commod1` | Mineral o grupo de minerales principales |
-| `work_type` | Método de extracción (Surface, Underground, Surface/Underground, Unknown) |
-| `prod_size` | Escala productiva (S: pequeño, M: mediano, Y: grande, U: desconocido) |
-| `dev_stat` | Estado de desarrollo (Producer, Past Producer, Prospect, Occurrence, etc.) |
-| `ore` | Mineral principal extraído |
-
-**Fuente:** [Mineral Ores Around the World](https://www.kaggle.com/datasets/ramjasmaurya/mineral-ores-around-the-world/data) — filtrado para Perú (3,057 registros)
+**Source:** [Mineral Ores Around the World](https://www.kaggle.com/datasets/ramjasmaurya/mineral-ores-around-the-world/data) — filtered for Peru (3,057 records)
 
 ---
 
-## 🚀 Inicio Rápido
+## 🚀 Quick Start
 
-### Prerrequisitos
+### Prerequisites
 
 - [Node.js](https://nodejs.org/) >= 18
 - [pnpm](https://pnpm.io/) >= 10
 - [Python](https://python.org/) >= 3.12
-- [uv](https://docs.astral.sh/uv/) (gestor de paquetes Python)
+- [uv](https://docs.astral.sh/uv/) (Python package manager)
 
-### 1. Clonar el repositorio
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/LuiccianDev/mine_methods_peru.git
 cd mine_methods_peru
 ```
 
-### 2. Análisis de datos (opcional — los JSON ya están generados)
+### 2. Data analysis (optional — JSONs are already generated)
 
 ```bash
 cd analysis
-uv sync                          # Instalar dependencias Python
-# Abrir notebooks en Jupyter para explorar el análisis
+uv sync                          # Install Python dependencies
+# Open notebooks in Jupyter to explore the analysis
 uv run jupyter notebook
 ```
 
-### 3. Frontend — Desarrollo
+### 3. Frontend — Development
 
 ```bash
 cd frontend
-pnpm install                     # Instalar dependencias
-pnpm dev                         # Servidor de desarrollo → http://localhost:4321
+pnpm install                     # Install dependencies
+pnpm dev                         # Development server → http://localhost:4321
 ```
 
-### 4. Frontend — Producción
+### 4. Frontend — Production
 
 ```bash
 cd frontend
-pnpm build                       # Build estático → dist/
-pnpm preview                     # Preview local del build
+pnpm build                       # Static build → dist/
+pnpm preview                     # Local preview of the build
 ```
 
 ---
 
-## 📂 Flujo de Datos
+## 📂 Data Flow
 
 ```text
 ┌─────────────────────┐
 │  Kaggle Dataset CSV  │
 │  (Mineral Ores)      │
 └────────┬────────────┘
-         │ Filtro: country == "Peru"
+         │ Filter: country == "Peru"
          ▼
 ┌─────────────────────┐
-│  clean_data.ipynb    │  Limpieza y estandarización
+│  clean_data.ipynb    │  Cleaning and standardization
 │  (Python/Pandas)     │
 └────────┬────────────┘
          ▼
 ┌─────────────────────┐
-│df_peru_cleaned.csv   │  3,057 registros limpios
+│df_peru_cleaned.csv   │  3,057 clean records
 └────────┬────────────┘
          │
          ▼
 ┌─────────────────────┐
-│analisis_mineria.ipynb│  EDA + Agregaciones por bloque
+│analisis_mineria.ipynb│  EDA + Aggregations by block
 │  (Python/Pandas)     │
 └────────┬────────────┘
-         │ Exportación JSON por bloque
+         │ JSON export by block
          ▼
 ┌─────────────────────┐
-│  frontend/src/data/  │  JSON estáticos (B1–B5 + GeoJSON)
+│  frontend/src/data/  │  Static JSONs (B1–B5 + GeoJSON)
 │  ├── B1/             │
 │  ├── B2/             │
 │  ├── B3/             │
 │  ├── B4/             │
 │  └── B5/             │
 └────────┬────────────┘
-         │ Import en frontmatter (.astro)
+         │ Import in frontmatter (.astro)
          ▼
 ┌─────────────────────┐
-│  Astro Pages +       │  Componentes React con ECharts
-│  React Islands       │  y Leaflet renderizados como
-│  (SSG → HTML)        │  islands interactivos
+│  Astro Pages +       │  React components with ECharts
+│  React Islands       │  and Leaflet rendered as
+│  (SSG → HTML)        │  interactive islands
 └─────────────────────┘
 ```
 
 ---
 
-## 🎨 Capturas
+## 🎨 Screenshots
 
-> _El dashboard es un sitio estático interactivo. Ejecuta `pnpm dev` para explorarlo en vivo._
+> _The dashboard is a static interactive site. Run `pnpm dev` to explore it live._
 
-### Secciones del Dashboard
+### Dashboard Sections
 
-1. **Hero** — Presentación visual con mapa de fondo
-2. **Contexto** — Descripción del dataset y metodología
-3. **Bloque 1** — Brecha informativa + donut de métodos
-4. **Bloque 2** — Heatmap mineral-método + composición por barras apiladas
-5. **Bloque 3** — Volumen regional + densidad espacial + mapa interactivo Leaflet
-6. **Bloque 4** — Relación escala-método (stacked bar)
-7. **Bloque 5** — Estado de desarrollo vs método
-8. **Conclusiones** — Síntesis de los 5 hallazgos principales
-
----
-
-## 📝 Scripts Disponibles
-
-### Frontend (desde `frontend/`)
-
-| Comando | Descripción |
-
-| `pnpm dev` | Servidor de desarrollo (hot reload) |
-| `pnpm build` | Build de producción (estático) |
-| `pnpm preview` | Preview del build de producción |
-| `pnpm format` | Formatear código con Prettier |
-| `pnpm format:check` | Verificar formato sin escribir |
-
-### Analysis (desde `analysis/`)
-
-| Comando | Descripción |
-
-| `uv sync` | Instalar dependencias Python |
-| `uv run jupyter notebook` | Lanzar Jupyter para explorar notebooks |
+1. **Hero** — Visual presentation with background map
+2. **Context** — Dataset and methodology description
+3. **Block 1** — Information gap + methods donut
+4. **Block 2** — Mineral-method heatmap + stacked bar composition
+5. **Block 3** — Regional volume + spatial density + interactive Leaflet map
+6. **Block 4** — Scale-method relationship (stacked bar)
+7. **Block 5** — Development status vs method
+8. **Conclusions** — Synthesis of the 5 main findings
 
 ---
 
-## 🤝 Contribución
+## 📝 Available Scripts
 
-1. Fork del repositorio
-2. Crear una rama feature (`git checkout -b feature/nueva-visualizacion`)
-3. Commit de cambios (`git commit -m 'feat: agregar nueva gráfica'`)
-4. Push a la rama (`git push origin feature/nueva-visualizacion`)
-5. Abrir un Pull Request
+### Frontend (from `frontend/`)
+
+| Command | Description |
+|---------|-------------|
+| `pnpm dev` | Development server (hot reload) |
+| `pnpm build` | Production build (static) |
+| `pnpm preview` | Preview production build |
+| `pnpm format` | Format code with Prettier |
+| `pnpm format:check` | Check format without writing |
+
+### Analysis (from `analysis/`)
+
+| Command | Description |
+|---------|-------------|
+| `uv sync` | Install Python dependencies |
+| `uv run jupyter notebook` | Launch Jupyter to explore notebooks |
 
 ---
 
-## 📄 Licencia
+## 🤝 Contribution
 
-Este proyecto es de uso educativo y fue desarrollado como parte del **Codedex Data Science Challenge 2026**.
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/new-visualization`)
+3. Commit changes (`git commit -m 'feat: add new chart'`)
+4. Push to the branch (`git push origin feature/new-visualization`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is for educational use and was developed as part of the **Codedex Data Science Challenge 2026**.
 
 ---
 
 <p align="center">
-  Hecho con 🧪 datos + ⚡ código por <a href="https://github.com/LuiccianDev">LuiccianDev</a>
+  Made with 🧪 data + ⚡ code by <a href="https://github.com/LuiccianDev">LuiccianDev</a>
 </p>
