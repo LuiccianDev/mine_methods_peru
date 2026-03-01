@@ -34,3 +34,9 @@ frontend/.openhands/
 frontend/.agents/
 frontend/.vscode/
 frontend/*.log
+
+# jetbrains setting folder
+.idea/
+.opencode/
+.agents/
+.openhands/
