@@ -2,8 +2,8 @@ ignore-scripts: true
 engineStrict: true
 minimumReleaseAge: 1440
 allowBuilds:
-  esbuild: set this to true or false
-  sharp: set this to true or false
+  esbuild: True
+  sharp: True
 minimumReleaseAgeExclude:
   - yaml@2.8.3
   - astro@6.1.6
