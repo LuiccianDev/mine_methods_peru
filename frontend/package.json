@@ -14,24 +14,24 @@
   "dependencies": {
     "@astrojs/react": "^4.4.2",
     "@types/leaflet": "^1.9.21",
-    "@types/react": "^19.2.14",
+    "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
-    "astro": "^5.17.1",
-    "echarts": "^6.0.0",
+    "astro": "^5.18.2",
+    "echarts": "^6.1.0",
     "echarts-for-react": "^3.0.6",
     "leaflet": "^1.9.4",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
     "react-leaflet": "^5.0.0",
     "sharp": "^0.34.5"
   },
-  "packageManager": "pnpm@10.26.1+sha512.664074abc367d2c9324fdc18037097ce0a8f126034160f709928e9e9f95d98714347044e5c3164d65bd5da6c59c6be362b107546292a8eecb7999196e5ce58fa",
+  "packageManager": "pnpm@11.5.0+sha512.dbfcc4f81cf48597afd4bc391ffdf12c11f1a9fb83a395bfa6b0a2d9cc2fd8ffebafdb1ccbd529632153f793904c2615b7f09fe1a345473fd1c35845172a8eb1",
   "devDependencies": {
-    "@astrojs/check": "^0.9.6",
-    "@tailwindcss/vite": "^4.2.1",
+    "@astrojs/check": "^0.9.9",
+    "@tailwindcss/vite": "^4.3.0",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.7.2",
-    "tailwindcss": "^4.2.1",
+    "prettier-plugin-tailwindcss": "^0.7.4",
+    "tailwindcss": "^4.3.0",
     "typescript": "^5.9.3"
   }
 }
